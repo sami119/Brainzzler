@@ -4,13 +4,32 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brainzzler</title>
-  <link rel="icon" href="\images\logo_1x.png" >
+  <link rel="shortcut icon" href="\favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css\stylesheet.css">
+  <link rel="stylesheet" href="css\animations_style.css">
+  <script src="scripts\javascript.js"></script>
 </head>
 <body>
   <header>
     <img src="images\logotype.png" alt="logo" >
-    <img src="images\profile picture.png" align="right" width="40px" height="40px" style="border-radius: 50%;">
+    <img src="images\profile picture.png" width="40px" height="40px" style="border-radius: 50%; position: absolute; top: 10px; right: 95px;">
+    <div class="container" onclick="myFunction(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
   </header>
+
+  <footer>
+    &copy;2019-Brainzzler.com GNU-License
+  </footer>
 </body>
 </html>

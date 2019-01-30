@@ -9,7 +9,21 @@ body {
 header {
   background-image: url("images\header_bg.png");
   background-color: #cfe7e5;
-  padding: 15px;
+  padding: 10px;
   padding-left: 50px;
   padding-right: 50px;
+}
+
+footer{
+  background-color: #f9e0aa;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  padding-left: 50;
+  padding-right: 50;
+  font-size: 20px;
+  font-family: "Calibri";
+  color: rgb(0, 0, 0);
 }
