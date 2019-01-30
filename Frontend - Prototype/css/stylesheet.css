@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background-image: url("images\header_bg.png");
+  background-color: #cfe7e5;
+  padding: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
