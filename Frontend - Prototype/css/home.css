@@ -1,0 +1,15 @@
+.banner{
+  background-image: url(../images/header_home.png);
+}
+
+.banner h1{
+  font-family: Sunday;
+  font-size: 53px;
+  color: rgb(0, 0, 0);
+}
+
+.banner h2{
+  font-family: "Calibri";
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+}

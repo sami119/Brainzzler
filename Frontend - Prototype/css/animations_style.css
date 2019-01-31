@@ -38,7 +38,7 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-.container {
+.menu-hamburger {
   display: inline-block;
   cursor: pointer;
   position: absolute;

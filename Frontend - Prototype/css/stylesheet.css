@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background-image: url("images\header_bg.png");
+  background-image: url("../images/header_bg.png");
   background-color: #cfe7e5;
   padding: 10px;
   padding-left: 50px;
