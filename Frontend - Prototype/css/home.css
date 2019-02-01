@@ -13,3 +13,24 @@
   color: rgb(0, 0, 0);
   font-size: 40px;
 }
+
+.StartGame{
+  background-color: #c7201c;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.StartGame:hover{
+  background-color: #566b75;
+}
+.footer{
+  background-image: url(../images/footer_bg.png);
+}
