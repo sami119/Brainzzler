@@ -34,3 +34,11 @@
 .footer{
   background-image: url(../images/footer_bg.png);
 }
+
+.link{
+  color: black;
+}
+.link:hover{
+  text-decoration: none;
+  color: #566b75;
+}
