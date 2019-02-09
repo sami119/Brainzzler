@@ -25,7 +25,9 @@
 }
 
 .forms{
-  width: 50%;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: .375rem .75rem;
   border: none;
   border-bottom: 3px solid #c0e0dd;
 }
