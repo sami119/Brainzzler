@@ -31,7 +31,13 @@
   border: none;
   border-bottom: 3px solid #c0e0dd;
 }
-
+.forms-2{
+  width: 50%;
+  height: calc(2.25rem + 2px);
+  padding: .375rem .75rem;
+  border: none;
+  border-bottom: 3px solid #c0e0dd;
+}
 .enter-button{
   background-color: #c7201c;
   border: none;
