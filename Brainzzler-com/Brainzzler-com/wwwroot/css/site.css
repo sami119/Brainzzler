@@ -1,0 +1,76 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+
+.banner {
+    background-image: url(../images/header_home.png);
+}
+
+    .banner h1 {
+        font-family: Sunday;
+        font-size: 53px;
+        color: rgb(0, 0, 0);
+    }
+
+    .banner h2 {
+        font-family: "Calibri";
+        color: rgb(0, 0, 0);
+        font-size: 40px;
+    }
+
+.StartGame {
+    background-color: #c7201c;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+    .StartGame:hover {
+        background-color: #566b75;
+    }
+
+.footer {
+    background-image: url(../images/footer_bg.png);
+}
+
+.link {
+    color: black;
+}
+.link:hover {
+    text-decoration: none;
+    color: #566b75;
+}
