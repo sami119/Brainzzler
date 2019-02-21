@@ -31,3 +31,4 @@ D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.
 D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.pdb
 D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.csproj.CopyComplete
 D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\Questions\Index.g.cshtml.cs
+D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\Games\Index.g.cshtml.cs
