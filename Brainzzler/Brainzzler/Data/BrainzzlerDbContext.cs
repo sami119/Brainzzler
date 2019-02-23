@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Brainzzler.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class BrainzzlerDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public BrainzzlerDbContext(DbContextOptions<BrainzzlerDbContext> options)
             : base(options)
         {
         }
