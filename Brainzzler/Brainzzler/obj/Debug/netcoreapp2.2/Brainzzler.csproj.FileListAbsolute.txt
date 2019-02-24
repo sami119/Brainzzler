@@ -65,3 +65,4 @@ C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Deb
 C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.dll
 C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.pdb
 C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.csproj.CopyComplete
+C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.csprojAssemblyReference.cache
