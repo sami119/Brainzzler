@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Brainzzler.Models;
 
 namespace Brainzzler.Models
 {
@@ -32,8 +33,8 @@ namespace Brainzzler.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Brainzzler_DB;Trusted_Connection=True;");
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+//                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Brainzzler_DB;Trusted_Connection=True;");
             }
         }
 
@@ -173,5 +174,7 @@ namespace Brainzzler.Models
                 entity.Property(e => e.QuestionId).HasColumnName("QuestionID");
             });
         }
+
+        public DbSet<Brainzzler.Models.AnswerSheet> AnswerSheet { get; set; }
     }
 }

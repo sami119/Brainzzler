@@ -1,0 +1,79 @@
+﻿@model Brainzzler.Models.AnswerSheet
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>AnswerSheet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TestId" class="control-label"></label>
+                <input asp-for="TestId" class="form-control" />
+                <span asp-validation-for="TestId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Test_Name" class="control-label"></label>
+                <input asp-for="Test_Name" class="form-control" />
+                <span asp-validation-for="Test_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuestionId" class="control-label"></label>
+                <input asp-for="QuestionId" class="form-control" />
+                <span asp-validation-for="QuestionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Question_Text" class="control-label"></label>
+                <input asp-for="Question_Text" class="form-control" />
+                <span asp-validation-for="Question_Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnswerId" class="control-label"></label>
+                <input asp-for="AnswerId" class="form-control" />
+                <span asp-validation-for="AnswerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Answer" class="control-label"></label>
+                <input asp-for="Answer" class="form-control" />
+                <span asp-validation-for="Answer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Chosen" class="control-label"></label>
+                <input asp-for="Chosen" class="form-control" />
+                <span asp-validation-for="Chosen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Correct" class="control-label"></label>
+                <input asp-for="Correct" class="form-control" />
+                <span asp-validation-for="Correct" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

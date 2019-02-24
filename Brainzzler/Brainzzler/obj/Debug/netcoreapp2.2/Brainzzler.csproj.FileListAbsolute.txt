@@ -66,3 +66,9 @@ C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Deb
 C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.pdb
 C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.csproj.CopyComplete
 C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.csprojAssemblyReference.cache
+C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\Create.g.cshtml.cs
+C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\Delete.g.cshtml.cs
+C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\Details.g.cshtml.cs
+C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\Edit.g.cshtml.cs
+C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\Index.g.cshtml.cs
+C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\AnswerSheet.g.cshtml.cs
