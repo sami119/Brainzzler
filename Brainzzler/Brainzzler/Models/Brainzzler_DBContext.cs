@@ -161,7 +161,7 @@ namespace Brainzzler.Models
 
             modelBuilder.Entity<Test>(entity =>
             {
-                entity.Property(e => e.Test1)
+                entity.Property(e => e.Test_Name)
                     .IsRequired()
                     .HasColumnName("Test")
                     .HasMaxLength(100)
