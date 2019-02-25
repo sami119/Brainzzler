@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Brainzzler.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Brainzzler.Models;
 
 namespace Brainzzler
 {
@@ -34,6 +35,9 @@ namespace Brainzzler
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            services.AddDbContext<Brainzzler_DBContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("BraizzlerDatabase")));
 
             services.AddDbContext<BrainzzlerDbContext>(options =>
                 options.UseSqlServer(
