@@ -1,10 +1,51 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Games";
 }
-<div class="container text-center" style="background-color:#e2f0ef;padding-top:30px; padding-bottom:30px; width: 100%; height: 100%;">
-    <img src="~/images/lock.png" alt="lock">
-    <div>
-        <button type="button" class="StartGame">Започни игра</button>
+@*<div class="container">
+      <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="~/games/clumsy-bird-master/index.html"></iframe>
+      </div>
+    </div>
+*@
+
+<!-- Slideshow container -->
+<div class="container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides">
+        <div class="numbertext">1 / 3</div>
+        <img src="~/images/Games/clumsy-bird-open-source-game.png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="~/images/Games/2048-open-source-game.png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="~/images/Games/astray-webgl-maze-game-open-source.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+    <!-- Image text -->
+    <div class="caption-container">
+        <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail images -->
+    <div class="row">
+        <div class="column">
+            <img class="demo cursor" src="~/images/Games/clumsy-bird-open-source-game.png" style="width:100%" onclick="currentSlide(1)" alt="Clusmy Bird">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="~/images/Games/2048-open-source-game.png" style="width:100%" onclick="currentSlide(2)" alt="2048">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="~/images/Games/astray-webgl-maze-game-open-source.jpg" style="width:100%" onclick="currentSlide(3)" alt="Astray">
+        </div>
     </div>
 </div>
