@@ -3,6 +3,9 @@ showSlides(slideIndex);
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
+    jQuery(".embed-responsive iframe").each(function (index, element) {
+        jQuery(element).attr("src", jQuery(element).attr("src")); 
+    });
 }
 
 function currentSlide(n) {
