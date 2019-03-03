@@ -13,12 +13,12 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
-#line 1 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\_ViewImports.cshtml"
+#line 1 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\_ViewImports.cshtml"
 using Brainzzler;
 
 #line default
 #line hidden
-#line 2 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\_ViewImports.cshtml"
+#line 2 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\_ViewImports.cshtml"
 using Brainzzler.Models;
 
 #line default
@@ -57,8 +57,8 @@ using Brainzzler.Models;
             BeginContext(38, 2, true);
             WriteLiteral("\r\n");
             EndContext();
-#line 3 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
-  
+#line 3 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
+
     ViewData["Title"] = "Questions";
 
 #line default
@@ -67,7 +67,7 @@ using Brainzzler.Models;
             WriteLiteral("\r\n<h4 style=\"margin-bottom: 15px;\">\r\n    ");
             EndContext();
             BeginContext(127, 41, false);
-#line 8 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
+#line 8 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
 Write(Html.DisplayFor(model => model.Test_Name));
 
 #line default
@@ -77,7 +77,7 @@ Write(Html.DisplayFor(model => model.Test_Name));
             WriteLiteral("\r\n</h4>\r\n\r\n<div class=\"question text-center\" style=\"margin-bottom: 20px;\">\r\n    <h1>\r\n        ");
             EndContext();
             BeginContext(263, 45, false);
-#line 13 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
+#line 13 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
    Write(Html.DisplayFor(model => model.Question_Text));
 
 #line default
@@ -86,7 +86,7 @@ Write(Html.DisplayFor(model => model.Test_Name));
             BeginContext(308, 42, true);
             WriteLiteral("\r\n    </h1>\r\n</div>\r\n\r\n<div class=\"row\">\r\n");
             EndContext();
-#line 18 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
+#line 18 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
      foreach (var item in Model.Question_Answers)
     {
 
@@ -96,7 +96,7 @@ Write(Html.DisplayFor(model => model.Test_Name));
             WriteLiteral("        <div class=\"col-sm-12\">\r\n\r\n            <button type=\"button\" class=\"btn-block AnswerButton\">\r\n                ");
             EndContext();
             BeginContext(527, 41, false);
-#line 23 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
+#line 23 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
            Write(Html.DisplayFor(modelItem => item.Answer));
 
 #line default
@@ -105,8 +105,8 @@ Write(Html.DisplayFor(model => model.Test_Name));
             BeginContext(568, 41, true);
             WriteLiteral("\r\n            </button>\r\n        </div>\r\n");
             EndContext();
-#line 31 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
-                    
+#line 31 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
+
     }
 
 #line default
@@ -132,7 +132,7 @@ Write(Html.DisplayFor(model => model.Test_Name));
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-id", "Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper", "RouteValues"));
             }
             BeginWriteTagHelperAttribute();
-#line 36 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
+#line 36 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
                                                                                       Model.Id++;
 
 #line default
@@ -195,7 +195,7 @@ Write(Html.DisplayFor(model => model.Test_Name));
             WriteLiteral("\r\n    <p>\r\n        ");
             EndContext();
             BeginContext(1151, 68, false);
-#line 39 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
+#line 39 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\AnswerSheets\AnswerSheet.cshtml"
    Write(Html.ActionLink("Forward", "AnswerSheet", new { id = Model.Id + 1 }));
 
 #line default

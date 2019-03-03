@@ -13,22 +13,22 @@ namespace Brainzzler.Areas.Identity.Pages.Account.Manage
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
-#line 2 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\_ViewImports.cshtml"
+#line 2 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\_ViewImports.cshtml"
 using Brainzzler.Areas.Identity;
 
 #line default
 #line hidden
-#line 3 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\_ViewImports.cshtml"
+#line 3 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
-#line 1 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\_ViewImports.cshtml"
+#line 1 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\_ViewImports.cshtml"
 using Brainzzler.Areas.Identity.Pages.Account;
 
 #line default
 #line hidden
-#line 1 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml"
+#line 1 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml"
 using Brainzzler.Areas.Identity.Pages.Account.Manage;
 
 #line default
@@ -78,8 +78,8 @@ using Brainzzler.Areas.Identity.Pages.Account.Manage;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-#line 3 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
-  
+#line 3 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+
     ViewData["Title"] = "Profile";
     ViewData["ActivePage"] = ManageNavPages.Index;
 
@@ -89,7 +89,7 @@ using Brainzzler.Areas.Identity.Pages.Account.Manage;
             WriteLiteral("\r\n<h4>");
             EndContext();
             BeginContext(128, 17, false);
-#line 8 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 8 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
 Write(ViewData["Title"]);
 
 #line default
@@ -106,7 +106,7 @@ Write(ViewData["Title"]);
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper);
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper.Name = (string)__tagHelperAttribute_0.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
-#line 9 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 9 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.StatusMessage);
 
 #line default
@@ -134,7 +134,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper.For = ModelExpressionProv
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationSummaryTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper);
-#line 13 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 13 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSummary = global::Microsoft.AspNetCore.Mvc.Rendering.ValidationSummary.All;
 
 #line default
@@ -158,7 +158,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.LabelTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper);
-#line 15 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 15 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Username);
 
 #line default
@@ -181,7 +181,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
-#line 16 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 16 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Username);
 
 #line default
@@ -208,7 +208,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.LabelTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper);
-#line 19 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 19 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Input.Email);
 
 #line default
@@ -225,7 +225,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 BeginContext(653, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();
-#line 20 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 20 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
                  if (Model.IsEmailConfirmed)
                 {
 
@@ -240,7 +240,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
-#line 23 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 23 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Input.Email);
 
 #line default
@@ -258,7 +258,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 BeginContext(843, 171, true);
                 WriteLiteral("\r\n                        <span class=\"input-group-addon\" aria-hidden=\"true\"><span class=\"glyphicon glyphicon-ok text-success\"></span></span>\r\n                    </div>\r\n");
                 EndContext();
-#line 26 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 26 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
                 }
                 else
                 {
@@ -274,7 +274,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
-#line 29 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 29 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Input.Email);
 
 #line default
@@ -317,7 +317,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 BeginContext(1308, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();
-#line 31 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 31 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
                 }
 
 #line default
@@ -331,7 +331,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
-#line 32 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 32 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Input.Email);
 
 #line default
@@ -355,7 +355,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.LabelTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper);
-#line 35 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 35 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Input.PhoneNumber);
 
 #line default
@@ -378,7 +378,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
-#line 36 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 36 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Input.PhoneNumber);
 
 #line default
@@ -402,7 +402,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
-#line 37 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
+#line 37 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\Manage\Index.cshtml"
 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Input.PhoneNumber);
 
 #line default
