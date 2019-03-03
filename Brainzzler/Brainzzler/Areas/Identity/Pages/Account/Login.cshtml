@@ -12,7 +12,7 @@
             <span asp-validation-for="Input.UserName" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <input asp-for="Input.Password" class="forms-2" placeholder="Парола" style="margin-top: 30px; margin-bottom: 10px;" />
+            <input asp-for="Input.Password" class="forms-2" placeholder="Парола" style="margin-top: 20px; margin-bottom: 10px;" />
             <span asp-validation-for="Input.Password" class="text-danger"></span>
         </div>
         <div class="form-group">
@@ -34,8 +34,6 @@
     </form>
 </section>
 <section>
-    <h4>Use another service to log in.</h4>
-    <hr />
     @{
         if ((Model.ExternalLogins?.Count ?? 0) == 0)
         {
@@ -53,7 +51,7 @@
                     <p>
                         @foreach (var provider in Model.ExternalLogins)
                         {
-                            <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                            <button type="submit" class="facebook-button btn-block" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
                         }
                     </p>
                 </div>
@@ -61,7 +59,6 @@
         }
     }
 </section>
-    </div>
 
 
 @section Scripts {

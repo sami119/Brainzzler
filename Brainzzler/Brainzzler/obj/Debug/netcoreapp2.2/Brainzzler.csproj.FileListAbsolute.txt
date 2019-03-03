@@ -65,11 +65,6 @@ C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Deb
 C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.csproj.CopyComplete
 C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\AnswerSheet.g.cshtml.cs
 D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\AnswerSheet.g.cshtml.cs
-D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\Create.g.cshtml.cs
-D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\Delete.g.cshtml.cs
-D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\Details.g.cshtml.cs
-D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\Edit.g.cshtml.cs
-D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\AnswerSheets\Index.g.cshtml.cs
 D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutLR.g.cshtml.cs
 D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\AccessDenied.g.cshtml.cs
 D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\ConfirmEmail.g.cshtml.cs
