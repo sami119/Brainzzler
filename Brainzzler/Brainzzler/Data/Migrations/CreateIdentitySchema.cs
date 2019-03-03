@@ -191,6 +191,77 @@ namespace Brainzzler.Data.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+
+            //----------------------------------------
+            migrationBuilder.CreateTable(
+                name: "Answers",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false),
+                    QuestionId = table.Column<long>(nullable: false),
+                    Answer = table.Column<string>(maxLength: 255, nullable: false),
+                    Correct = table.Column<short>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Answers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Questions",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false),
+                    Question = table.Column<string>(maxLength: 255, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Questions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Test",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false),
+                    Test = table.Column<string>(maxLength: 199, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Test", x => x.Id);
+                });
+
+
+            migrationBuilder.CreateTable(
+                name: "TestQuestions",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false),
+                    TestId = table.Column<int>(nullable: false),
+                    QuestionId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TestQuestions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserTestResults",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false),
+                    UserId = table.Column<int>(nullable: false),
+                    TestId = table.Column<int>(nullable: false),
+                    QuestionId = table.Column<int>(nullable: false),
+                    Chosen = table.Column<short?>(nullable: true),
+                    Correct = table.Column<short?>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserTestResults", x => x.Id);
+                });
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -215,6 +286,22 @@ namespace Brainzzler.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+
+            migrationBuilder.DropTable(
+                name: "Answers");
+
+            migrationBuilder.DropTable(
+                name: "Questions");
+
+            migrationBuilder.DropTable(
+                name: "Test");
+
+            migrationBuilder.DropTable(
+                name: "TestQuestions");
+
+            migrationBuilder.DropTable(
+                name: "UserTestResults");
         }
     }
 }
