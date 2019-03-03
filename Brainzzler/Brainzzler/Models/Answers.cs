@@ -9,5 +9,6 @@ namespace Brainzzler.Models
         public long QuestionId { get; set; }
         public string Answer { get; set; }
         public short Correct { get; set; }
+        //public short Selected { get; set; } //Exists only in application. Calculated. 
     }
 }

@@ -251,9 +251,10 @@ namespace Brainzzler.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false),
-                    UserId = table.Column<int>(nullable: false),
+                    UserId = table.Column<string>(maxLength: 450, nullable: false),
                     TestId = table.Column<int>(nullable: false),
                     QuestionId = table.Column<int>(nullable: false),
+                    AnswerId = table.Column<long>(nullable: false),
                     Chosen = table.Column<short?>(nullable: true),
                     Correct = table.Column<short?>(nullable: true)
                 },
