@@ -18,6 +18,39 @@ namespace Brainzzler.Controllers
             _context = context;
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //[BindProperty]
+        //public AnswerSheet this_AnswerSheet { get; set; }
+        public async Task<IActionResult> AnswerSheet(long id, [Bind("Id,UserId,UserName,TestId,Test_Name,QuestionId,Question_Text,Question_Answers,AnswerId,Answer,Chosen,Correct")] AnswerSheet answerSheet)
+        {
+            if (id != answerSheet.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(answerSheet);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!AnswerSheetExists(answerSheet.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(answerSheet);
+        }
 
         // GET: AnswerSheets/Details/5
         public async Task<IActionResult> AnswerSheet(long? id)
@@ -39,11 +72,14 @@ namespace Brainzzler.Controllers
             //TestId = 1 and QuestionId = 1
             //= @p0";
             var answerSheet = await _context.AnswerSheet.FromSql(query).FirstOrDefaultAsync<AnswerSheet>(m => m.Id == id);
+            if (answerSheet == null)
+            {
+                return NotFound();
+            }
 
             //answerSheet.Question_Answers = await _context.Answers.ToListAsync();
             answerSheet.Question_Answers = await _context.Answers.Where(m => m.QuestionId.Equals(id)).ToListAsync();
-
-            if (answerSheet == null)
+            if (answerSheet.Question_Answers == null)
             {
                 return NotFound();
             }
