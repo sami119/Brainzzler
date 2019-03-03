@@ -15,10 +15,17 @@ namespace Brainzzler.Models
         public int QuestionId { get; set; }
         public string Question_Text { get; set; }
 
+        public List<Answers> Question_Answers;
+        
 
-        public long AnswerId { get; set; }
+
+
+
+        public int AnswerId { get; set; }
         public string Answer { get; set; }
-        public short? Chosen { get; set; }
-        public short? Correct { get; set; }
+        public int? Chosen { get; set; }
+        public int? Correct { get; set; }
+        //public short? Chosen { get; set; }
+        //public short? Correct { get; set; }
     }
 }
