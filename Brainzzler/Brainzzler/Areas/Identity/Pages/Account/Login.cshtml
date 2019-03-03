@@ -5,14 +5,14 @@
     ViewData["Title"] = "Log in";
 }
 <section>
-    <form id="account" method="post"  style="margin-top: 70px">
+    <form id="account" method="post" style="margin-top: 70px">
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="form-group">
-            <input asp-for="Input.Email" class="forms-2" placeholder="Имейл" />
-            <span asp-validation-for="Input.Email" class="text-danger"></span>
+            <input asp-for="Input.UserName" class="forms-2" placeholder="Потребителско име" />
+            <span asp-validation-for="Input.UserName" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <input asp-for="Input.Password" class="forms-2" placeholder="Парола" style="margin-top: 30px; margin-bottom: 10px;"  />
+            <input asp-for="Input.Password" class="forms-2" placeholder="Парола" style="margin-top: 30px; margin-bottom: 10px;" />
             <span asp-validation-for="Input.Password" class="text-danger"></span>
         </div>
         <div class="form-group">
