@@ -13,17 +13,17 @@ namespace Brainzzler.Areas.Identity.Pages.Account
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
-#line 2 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\_ViewImports.cshtml"
+#line 2 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\_ViewImports.cshtml"
 using Brainzzler.Areas.Identity;
 
 #line default
 #line hidden
-#line 3 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\_ViewImports.cshtml"
+#line 3 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
-#line 1 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\_ViewImports.cshtml"
+#line 1 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\_ViewImports.cshtml"
 using Brainzzler.Areas.Identity.Pages.Account;
 
 #line default
@@ -65,8 +65,8 @@ using Brainzzler.Areas.Identity.Pages.Account;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-#line 3 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\ForgotPassword.cshtml"
-
+#line 3 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\ForgotPassword.cshtml"
+  
     ViewData["Title"] = "Забравена парола?";
 
 #line default
@@ -110,34 +110,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 EndContext();
-                BeginContext(308, 56, true);
-                WriteLiteral("\r\n            <div class=\"form-group\">\r\n                ");
+                BeginContext(240, 48, true);
+                WriteLiteral("\r\n        <div class=\"form-group\">\r\n            ");
                 EndContext();
-                BeginContext(364, 37, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe4d988d5810b774142bd3c8e3a8a03217ff95d79119", async() => {
-                }
-                );
-                __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.LabelTagHelper>();
-                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper);
-#line 15 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\Account\ForgotPassword.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Input.Email);
-
-#line default
-#line hidden
-                __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
-                if (!__tagHelperExecutionContext.Output.IsContentModified)
-                {
-                    await __tagHelperExecutionContext.SetOutputContentAsync();
-                }
-                Write(__tagHelperExecutionContext.Output);
-                __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                EndContext();
-                BeginContext(401, 18, true);
-                WriteLiteral("\r\n                ");
-                EndContext();
-                BeginContext(419, 52, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "fe4d988d5810b774142bd3c8e3a8a03217ff95d710792", async() => {
+                BeginContext(288, 67, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4cb9c16545e17d403e99c8242088ac43656821dd9146", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
