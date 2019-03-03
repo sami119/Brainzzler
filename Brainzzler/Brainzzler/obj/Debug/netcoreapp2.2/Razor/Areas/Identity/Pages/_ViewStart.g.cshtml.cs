@@ -40,7 +40,7 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
 #line 6 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Areas\Identity\Pages\_ViewStart.cshtml"
-     
+
      Layout = "/Views/Shared/_Layout.cshtml";
 
 #line default
