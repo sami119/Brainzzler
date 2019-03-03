@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 namespace Brainzzler.Areas.Identity.Pages.Account
 {
@@ -37,8 +38,11 @@ namespace Brainzzler.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [EmailAddress]
-            public string Email { get; set; }
+            [Display(Name ="Потебителско име")]
+            public string UserName { get; set; }
+//            [Required]
+//            [EmailAddress]
+//           public string Email { get; set; }
 
             [Required]
             [DataType(DataType.Password)]
@@ -73,23 +77,41 @@ namespace Brainzzler.Areas.Identity.Pages.Account
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
-                if (result.Succeeded)
+                var user = await _signInManager.
+                    UserManager.Users
+                    .FirstOrDefaultAsync(userIn => userIn.UserName == Input.UserName || userIn.Email == Input.UserName); //позволяваме на потребителя да влиза с username/email 
+
+                var invalidLoginAttempt = false;
+                if (user != null)
                 {
-                    _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
-                }
-                if (result.RequiresTwoFactor)
-                {
-                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
-                }
-                if (result.IsLockedOut)
-                {
-                    _logger.LogWarning("User account locked out.");
-                    return RedirectToPage("./Lockout");
+                    var result = await _signInManager.PasswordSignInAsync(user.UserName, Input.Password, Input.RememberMe, lockoutOnFailure: true);
+                    if (result.Succeeded)
+                    {
+                        _logger.LogInformation("User logged in.");
+                        return LocalRedirect(returnUrl);
+                    }
+                    if (result.RequiresTwoFactor)
+                    {
+                        return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
+                    }
+                    if (result.IsLockedOut)
+                    {
+                        _logger.LogWarning("User account locked out.");
+                        return RedirectToPage("./Lockout");
+                    }
+                    else
+                    {
+                        invalidLoginAttempt = true;
+                    }
+
                 }
                 else
                 {
+                    //не е намерил такъв user po email/username
+                    invalidLoginAttempt = true;
+                }
+
+                if (invalidLoginAttempt) {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     return Page();
                 }

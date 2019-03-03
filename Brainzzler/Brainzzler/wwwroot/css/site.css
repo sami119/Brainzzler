@@ -93,22 +93,9 @@ body {
     font-size: 40px;
 }
 
-.AnswerButton {
-    background-color: #51edde;
-    margin-bottom: 30px;
-    border: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
+.question {
+    background-color: aqua;
+    padding: 20px;
     font-family: Sunday;
-    font-size: 30px;
-    color: white;
-}
-
-.AnswerQuestion {
-    margin-bottom: 20px;
-    background-color: #0b77dc;
-    padding: 30px;
-    font-family: Sunday;
-    font-size: 45px;
     color: white;
 }
