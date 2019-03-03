@@ -62,17 +62,6 @@ body {
     background-image: url(../images/footer_bg.png);
 }
 
-.AnswerButton {
-    background-color: #51edde;
-    margin-bottom: 30px;
-    border: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-family: Sunday;
-    font-size: 30px;
-    color: white;
-}
-
 .StartGame {
     background-color: #c7201c;
     border: none;
@@ -102,13 +91,4 @@ body {
     font-family: "Calibri";
     color: rgb(0, 0, 0);
     font-size: 40px;
-}
-
-.AnswerQuestion {
-    margin-bottom: 20px;
-    background-color: #0b77dc;
-    padding: 30px;
-    font-family: Sunday;
-    font-size: 45px;
-    color: white;
 }

@@ -1,114 +1,25 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@{
-    Layout = null;
-}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Brainzzler</title>
-
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
-              crossorigin="anonymous"
-              integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" />
-    </environment>
-    <link rel="stylesheet" href="~/css/site.css" />
-</head>
-<body>
-    <div class="jumbotron banner text-center" style=" background-image: url(../images/header_home.png);margin-bottom:0;">
-        <div style="vertical-align: middle; display: inline-block;">
-            <img class="img-fluid" src="images\logo.png" alt="logo">
-        </div>
-        <div style="vertical-align: middle; display: inline-block; text-align: left; margin-left: 10px;">
-            <h1>Brainzzler.com</h1>
-            <h2>Забавлявай се, докато учиш!</h2>
-        </div>
-        <div>
-            <button type="button" class="StartGame">Започни игра</button>
-        </div>
+<div style="margin: 30px;">
+    <div class="col-sm-8">
+        <h2>Кои сме ние?</h2>
+        <p>
+            Brainzzler.com е образователна игра целяща да въведе в ИТ-сферата и най малките.
+            Чрез въпросите децата научават нови неща, а чрез игрите те се мотивират да учат за да отключват различни игри.
+            Също така е и една от малкото платформи в България с html 5 игри.
+            Проекта ни е open sors и който иска може да регистрира девелопърски или учителски акаунт и да добавя въпроси или игри.
+        </p>
+        <br>
+        <h2>Как да играете?</h2>
+        <p>
+            За да играете е нужно да се регистрирате.
+            Всеки член на сайта има достъп до база данни с въпроси от IT-сферата наредени от лесни към трудни.
+            Решите ли достатъчно въпроси, ви се отключват различни игри.
+            За да ги включите влезте в меню Игри и започнете да играете.
+            Там ще намерите едни от най известните игри за браузър.
+            В зависимост от това колко нива сте минали ще се качвате и във нашета класация на сайта.
+            Това е всичко.
+        </p>
     </div>
-    <header>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Brainzzler.com</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Начало</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="AnswerSheets" asp-action="AnswerSheet" asp-route-id="5">Въпроси</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Games" asp-action="Index">Игри</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div style="margin: 30px;">
-        <div class="col-sm-8">
-            <h2>Кои сме ние?</h2>
-            <p>
-                Brainzzler.com е образователна игра целяща да въведе в ИТ-сферата и най малките.
-                Чрез въпросите децата научават нови неща, а чрез игрите те се мотивират да учат за да отключват различни игри.
-                Също така е и една от малкото платформи в България с html 5 игри.
-                Проекта ни е open sors и който иска може да регистрира девелопърски или учителски акаунт и да добавя въпроси или игри.
-            </p>
-            <br>
-            <h2>Как да играете?</h2>
-            <p>
-                За да играете е нужно да се регистрирате.
-                Всеки член на сайта има достъп до база данни с въпроси от IT-сферата наредени от лесни към трудни.
-                Решите ли достатъчно въпроси, ви се отключват различни игри.
-                За да ги включите влезте в меню Игри и започнете да играете.
-                Там ще намерите едни от най известните игри за браузър.
-                В зависимост от това колко нива сте минали ще се качвате и във нашета класация на сайта.
-                Това е всичко.
-            </p>
-        </div>
-    </div>
-
-    <footer class="border-top footer text-muted" id="footer_layout">
-        <div class="container" style="color: black;">
-            &copy; 2019 - Brainzzler - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha256-E/V4cWE4qvAeO5MOhjtGtqDzPndRO1LBk8lJ/PR7CA4=">
-        </script>
-    </environment>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-</body>
-</html>
+</div>

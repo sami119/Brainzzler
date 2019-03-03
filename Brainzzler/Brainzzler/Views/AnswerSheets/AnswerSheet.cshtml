@@ -5,69 +5,83 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h4 class="col-sm-10">
-    @Html.DisplayFor(model => model.Test_Name)
-</h4>
-<br />
-<div class="container">
-    @*<div class="row">
-            <div class="col-sm-12 AnswerQuestion text-center">
-                @Html.DisplayFor(model => model.Question_Text)
-            </div>
-        </div>*@
+@*<h1>Details</h1>*@
+<div class="jumbotron banner text-center" style=" background-image: url(../images/header_home.png);margin-bottom:0;">
+    <div style="vertical-align: middle; display: inline-block; text-align: left; margin-left: 10px;">
+        <h1>@Html.DisplayNameFor(model => model.Question_Text)</h1>
 
-    <div class="jumbotron banner text-center" style=" background-image: url(../images/header_home.png);margin-bottom:0;">
-        <div style="vertical-align: middle; display: inline-block; text-align: left; margin-left: 10px;">
-            <h1 class="col-sm-10">
-                @Html.DisplayFor(model => model.Question_Text)
-            </h1>
-        </div>
-    </div>
-    <br />
-    <div class="row">
-        @foreach (var item in Model.Question_Answers)
-        {
-            <div class="col-sm-12">
-                @*<input type="checkbox" class="form-check-input AnswerButton" value="id">@Html.DisplayFor(modelItem => item.Answer)*@
-
-                <button type="button" class="btn-block AnswerButton">
-                    @Html.DisplayFor(modelItem => item.Answer)
-                </button>
-            </div>
-
-            @*<div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="id">@Html.DisplayFor(modelItem => item.Answer)
-                    </label>
-                </div>*@
-        }
     </div>
 </div>
-
+@*<partial name="~/Views/Answers/_PartialAnswers.cshtml" />
+    @await Html.PartialAsync("_PartialName.cshtml")*@
 <div>
-    <button type="button" class="AnswerSheet" asp-action="AnswerSheet" asp-route-id=@{Model.Id++;}>Напред</button>
-    <button type="button" class="AnswerSheet" asp-action="AnswerSheet" asp-route-id=new { id=Model.Id + 1 }>Напред</button>
-    <p>
-        @Html.ActionLink("Forward", "AnswerSheet", new { id = Model.Id + 1 })
-    </p>
-</div>
-
-
-@*
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Test_Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Test_Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.QuestionId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.QuestionId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Question_Text)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Question_Text)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AnswerId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AnswerId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Answer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Answer)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Chosen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Chosen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Correct)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Correct)
+        </dd>
+    </dl>
     <div>
-        <button type="button" class="AnswerSheet" asp-action="AnswerSheet" asp-route-id="3">Напред</button>
+        <button type="button" class="AnswerSheet">Напред</button>
     </div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-    <td>
-        @Html.DisplayFor(modelItem => item.Answer)
-    </td>
-    <div class="form-group">
-        <label asp-for="UserName" class="control-label"></label>
-        <input asp-for="UserName" class="form-control" />
-        <span asp-validation-for="UserName" class="text-danger"></span>
-    </div>
-*@
-
-
-
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>*@
+</div>

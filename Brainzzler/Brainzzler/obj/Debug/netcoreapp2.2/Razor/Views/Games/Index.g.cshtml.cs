@@ -13,12 +13,12 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
-#line 1 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\_ViewImports.cshtml"
+#line 1 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\_ViewImports.cshtml"
 using Brainzzler;
 
 #line default
 #line hidden
-#line 2 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\_ViewImports.cshtml"
+#line 2 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\_ViewImports.cshtml"
 using Brainzzler.Models;
 
 #line default
@@ -72,9 +72,9 @@ using Brainzzler.Models;
             BeginContext(0, 2, true);
             WriteLiteral("\r\n");
             EndContext();
-#line 2 "C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\Views\Games\Index.cshtml"
-
-    ViewData["Title"] = "Index";
+#line 2 "D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\Views\Games\Index.cshtml"
+  
+    ViewData["Title"] = "Games";
 
 #line default
 #line hidden

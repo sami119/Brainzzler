@@ -40,8 +40,20 @@ namespace Brainzzler.Controllers
             //= @p0";
             var answerSheet = await _context.AnswerSheet.FromSql(query).FirstOrDefaultAsync<AnswerSheet>(m => m.Id == id);
 
-            //answerSheet.Question_Answers = await _context.Answers.ToListAsync();
-            answerSheet.Question_Answers = await _context.Answers.Where(m => m.QuestionId.Equals(id)).ToListAsync();
+            Models.AnswerSheet as1;
+            as1 = new AnswerSheet();
+            as1.Id = 1;
+            as1.UserId = "";
+            as1.UserName = "UserName";
+            as1.TestId = 1;
+            as1.Test_Name = "Test_Name";
+            as1.QuestionId = 1;
+            as1.Question_Text = "Question_Text";
+            as1.AnswerId = 1;
+            as1.Answer = "";
+            as1.Chosen = 1;
+            as1.Correct = 1;
+            return View(as1);
 
             if (answerSheet == null)
             {
