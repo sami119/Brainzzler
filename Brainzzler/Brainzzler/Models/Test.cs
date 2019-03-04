@@ -7,5 +7,6 @@ namespace Brainzzler.Models
     {
         public long Id { get; set; }
         public string Test_Name { get; set; }
+        public virtual ICollection<Question> Questions { get; set; } //foreign key!
     }
 }

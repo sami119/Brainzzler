@@ -1,0 +1,41 @@
+﻿@model Brainzzler.Models.Test
+
+
+@{
+    Layout = "_Layout";
+}
+
+<div>
+    <h4>Test</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Test_Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Test_Name)
+        </dd>
+    </dl>
+    <div id="quizz" class="col-md-12">
+        @foreach (var question in Model.Questions)
+        {
+            <div class="question row" data-id="@question.Id">
+                <h2>@question.QuestionText</h2>
+                @foreach (var answer in question.Answers)
+                {
+                    <div class="col-sm-12 answer">
+
+                        <button type="button" class="btn-block answerButton" data-id="@answer.Id">
+                            @answer.AnswerText
+                        </button>
+                    </div>
+
+                }
+            </div>
+        }
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

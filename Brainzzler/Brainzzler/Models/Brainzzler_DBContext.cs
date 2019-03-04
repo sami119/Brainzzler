@@ -16,7 +16,7 @@ namespace Brainzzler.Models
         {
         }
 
-        public virtual DbSet<Answers> Answers { get; set; }
+        public virtual DbSet<Answer> Answers { get; set; }
         public virtual DbSet<AspNetRoleClaims> AspNetRoleClaims { get; set; }
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
@@ -24,10 +24,8 @@ namespace Brainzzler.Models
         public virtual DbSet<AspNetUserRoles> AspNetUserRoles { get; set; }
         public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
-        public virtual DbSet<Questions> Questions { get; set; }
-        public virtual DbSet<Test> Test { get; set; }
-        public virtual DbSet<TestQuestions> TestQuestions { get; set; }
-        public virtual DbSet<UserTestsResults> UserTestsResults { get; set; }
+        public virtual DbSet<Question> Questions { get; set; }
+        public virtual DbSet<Test> Tests { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -42,9 +40,9 @@ namespace Brainzzler.Models
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.2-servicing-10034");
 
-            modelBuilder.Entity<Answers>(entity =>
+            modelBuilder.Entity<Answer>(entity =>
             {
-                entity.Property(e => e.Answer)
+                entity.Property(e => e.AnswerText)
                     .IsRequired()
                     .HasMaxLength(255)
                     .IsUnicode(false);
@@ -152,9 +150,9 @@ namespace Brainzzler.Models
                 entity.Property(e => e.UserName).HasMaxLength(256);
             });
 
-            modelBuilder.Entity<Questions>(entity =>
+            modelBuilder.Entity<Question>(entity =>
             {
-                entity.Property(e => e.Question)
+                entity.Property(e => e.QuestionText)
                     .IsRequired()
                     .HasMaxLength(255)
                     .IsUnicode(false);
@@ -169,10 +167,7 @@ namespace Brainzzler.Models
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<UserTestsResults>(entity =>
-            {
-                entity.Property(e => e.QuestionId).HasColumnName("QuestionID");
-            });
+          
         }
 
         public DbSet<Brainzzler.Models.AnswerSheet> AnswerSheet { get; set; }

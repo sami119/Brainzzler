@@ -10,10 +10,8 @@ namespace Brainzzler.Models
         public long Id { get; set; }
         public string UserId { get; set; }
         public string UserName { get; set; }
-        public int TestId { get; set; }
-        public string Test_Name { get; set; }
-        public int QuestionId { get; set; }
-        public string Question_Text { get; set; }
-        public List<Answers> Question_Answers;
+        public Test Test { get; set; }
+        public List<QuestionResponse> QuestionResponses { get; set; }
+        public Score Score {get;set;}
     }
 }
