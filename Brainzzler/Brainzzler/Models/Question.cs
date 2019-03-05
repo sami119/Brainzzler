@@ -9,6 +9,6 @@ namespace Brainzzler.Models
         public string QuestionText { get; set; }
         public ICollection<Answer> Answers {get;set;}
         public double Score { get; set; }
-        public Test Test { get; set; }
+        public string WrongText { get; set; }
     }
 }

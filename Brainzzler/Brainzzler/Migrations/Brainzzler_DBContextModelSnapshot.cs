@@ -32,9 +32,11 @@ namespace Brainzzler.Migrations
 
                     b.Property<short>("Correct");
 
-                    b.Property<long>("QuestionId");
+                    b.Property<long?>("QuestionId");
 
                     b.Property<int?>("QuestionResponseId");
+
+                    b.Property<string>("WrongText");
 
                     b.HasKey("Id");
 
@@ -244,6 +246,8 @@ namespace Brainzzler.Migrations
 
                     b.Property<long?>("TestId");
 
+                    b.Property<string>("WrongText");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TestId");
@@ -259,13 +263,15 @@ namespace Brainzzler.Migrations
 
                     b.Property<long?>("AnswerSheetId");
 
-                    b.Property<int>("QuestionId");
+                    b.Property<long?>("QuestionId");
 
                     b.Property<string>("TextAnswer");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AnswerSheetId");
+
+                    b.HasIndex("QuestionId");
 
                     b.ToTable("QuestionResponse");
                 });
@@ -308,8 +314,7 @@ namespace Brainzzler.Migrations
                 {
                     b.HasOne("Brainzzler.Models.Question")
                         .WithMany("Answers")
-                        .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("QuestionId");
 
                     b.HasOne("Brainzzler.Models.QuestionResponse")
                         .WithMany("SelectedAnswers")
@@ -374,7 +379,7 @@ namespace Brainzzler.Migrations
 
             modelBuilder.Entity("Brainzzler.Models.Question", b =>
                 {
-                    b.HasOne("Brainzzler.Models.Test")
+                    b.HasOne("Brainzzler.Models.Test", "Test")
                         .WithMany("Questions")
                         .HasForeignKey("TestId");
                 });
@@ -384,6 +389,10 @@ namespace Brainzzler.Migrations
                     b.HasOne("Brainzzler.Models.AnswerSheet")
                         .WithMany("QuestionResponses")
                         .HasForeignKey("AnswerSheetId");
+
+                    b.HasOne("Brainzzler.Models.Question", "Question")
+                        .WithMany()
+                        .HasForeignKey("QuestionId");
                 });
 #pragma warning restore 612, 618
         }

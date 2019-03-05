@@ -25,7 +25,7 @@
                 {
                     <div class="col-sm-12 answer">
 
-                        <button type="button" class="btn-block answerButton" data-id="@answer.Id">
+                        <button type="button" class="btn-block answerButton" data-id="@answer.Id" data-question-id="@question.Id" data-question-score="@question.Score">
                             @answer.AnswerText
                         </button>
                     </div>
@@ -33,6 +33,10 @@
                 }
             </div>
         }
+        <div class="submit-box" style="display:none;">
+            <p>Натиснете бутон "Предай", за да приключите с теста</p>
+            <buttton type="button" id="submit-quizz" data-test-id="@Model.Id">Предай</buttton>
+        </div>
     </div>
 </div>
 <div>

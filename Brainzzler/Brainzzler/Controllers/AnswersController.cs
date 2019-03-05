@@ -27,6 +27,7 @@ namespace Brainzzler.Controllers
         public async Task<ActionResult<Answer>> GetAnswer(long id)
         {
             var answer = await _context.Answers.FindAsync(id);
+            var question = _context.Questions.Where(e => e.Answers.Contains(answer)).Single();
 
             if (answer == null)
             {
@@ -35,6 +36,7 @@ namespace Brainzzler.Controllers
 
             return answer;
         }
+        
         
 
         private bool AnswerExists(long id)

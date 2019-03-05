@@ -1,4 +1,4 @@
-﻿using Brainzzler.Data;
+using Brainzzler.Data;
 using Brainzzler.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -34,15 +34,18 @@ namespace Brainzzler
                                     new Answer()
                                     {
                                         AnswerText = "Отговор 2",
-                                        Correct = 0
+                                        Correct = 0,
+                                        WrongText = ""
                                     },
                                     new Answer()
                                     {
                                         AnswerText = "Отгвор 3",
-                                        Correct = 1
+                                        Correct = 1,
+                                        WrongText = ""
                                     }
                                 },
-                                Score = 1
+                                Score = 1,
+                                WrongText = "Lorem ipsum"
                             },
                             new Question() {
                                 QuestionText = "Компютърната система представлява 2",
@@ -50,20 +53,24 @@ namespace Brainzzler
                                 {
                                     new Answer() {
                                         AnswerText = "Отговор 1",
-                                        Correct = 0
+                                        Correct = 0,
+                                        WrongText = ""
                                     },
                                     new Answer()
                                     {
                                         AnswerText = "Отговор 2",
-                                        Correct = 1
+                                        Correct = 1,
+                                        WrongText = ""
                                     },
                                     new Answer()
                                     {
                                         AnswerText = "Отгвор 3",
-                                        Correct = 1
+                                        Correct = 1,
+                                        WrongText = ""
                                     }
                                 },
-                                Score = 2
+                                Score = 2,
+                                WrongText = "Lorem ipsum"
                             }
                             }
                         });

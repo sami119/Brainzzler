@@ -1,50 +1,51 @@
 ﻿(function (window, $) {
-    var Quizz = function () {
-        this.answers = [];
-        this.correctAnswers = [];
-        this.questionId = null;
-        this.totalScore = 0;
-        this.quizzContainer = null;
-    };
+    var answerSheet = {
+        answers: [],
+        score: 0
+    }; //answerSheet object - will be submitted upon test finish
+    var questionShow = null;
+    function initQuizz() {
+        $("#quizz .question").hide();
+        $("#quizz .question").first().show();
+        questionShow = $("#quizz .question").first();
+     
+    }
 
-    Quizz.prototype = {
-        init: function () {
-            this.answers = [];
-            this.questionId = null;
-            this.totalScore = 0;
-            this.quizzContainer = null;
-            return this;
-        },
-        setQuizzContainer: function (quizzContainer) {
-            this.quizzContainer = quizzContainer;
-        },
-        submitAnswers: function (questionId) {
+    initQuizz();
 
-        },
-        getQuestion: function (questionId) {
+    $("#quizz #submit-quizz").click(function () {
+        //post request must happen here
+        //$.post("/api/AnswerSheet/")
+    });
 
-        },
-        //добавяме css клас за маркиране на отговорите на потребителя
-        highLightAnswers: function () {
-            $(this.quizzContainer).find(".answer").removeClass("selected");
-            $(this.answers).each(function (index, element) {
-                $(this.quizzContainer).find(".answer[data-id='" + element + "']").addClass("selected");
-            });
-        },
-        highLightCorrectAnswers: function () {
-            $(this.quizzContainer).find(".answer").removeClass("correct");
-            $(this.corectAnswers).each(function (index, element) {
-                $(this.quizzContainer).find(".answer[data-id='" + element + "']").addClass("correct");
-            });
-        }
-        //...
-    };
+    $("#quizz .answerButton").click(function () {
+        var answerId = $(this).attr("data-id");
+        var questionId = $(this).attr("data-question-id");
+        var questionScore = $(this).attr("data-question-score");
 
-    $.fn.Quizz = function () {
-        return this.each(function (index, element) {
-            new Quizz(this).init();
-        });
-    };
+        $.get("/api/Answers/" + answerId, {}, function (data) {
+            if (data.correct) {
+                console.log("Correct");
+                answerSheet.score += questionScore;
+            } else {
+                alert(data.wrongText);
+            }
 
-    window.Quizz = Quizz;
+            answerSheet.answers[questionId] = answerId;
+            $("#quizz .question").hide();
+            questionShow = questionShow.next();
+            console.log(questionShow);
+            if (questionShow.length > 0) {
+                questionShow.show();
+            } else {
+                $("#quizz .submit-box").show();
+            }
+        }, "json");
+
+        //check if answer is correct
+        //show wrong/correct answer
+        //if answer is wrong, show extra data
+        //if correct, show next question
+    });
+
 })(window, jQuery);
