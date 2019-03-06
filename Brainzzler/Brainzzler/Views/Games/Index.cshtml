@@ -7,17 +7,35 @@
 <div class="container">
 
     <!-- Full-width images with number and caption text -->
+    <p>
+        В момента имаш @ViewBag.Points точки
+    </p>
     <div class="mySlides">
-        <div class="numbertext">1 / 10</div>
-        <div class="container" style="width: 100%">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe src="~/games/clumsy-bird-master/index.html" id="game1"></iframe>
-            </div>
-        </div>
+        <div class="numbertext">1 / 6</div>
+        @{
+                    var pointsRequred = 5;
+                    if (ViewBag.Points > pointsRequred)
+                    {
+                <div class="container" style="width: 100%">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="~/games/clumsy-bird-master/index.html" id="game1"></iframe>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="container" style="width: 100%">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <p>Трябва да имаш поне @pointsRequred точки, за да играеш на тази игра.</p>
+                    </div>
+                </div>
+
+            }
+        }
     </div>
 
     <div class="mySlides">
-        <div class="numbertext">2 / 10</div>
+        <div class="numbertext">2 / 6</div>
         <div class="container" style="width: 100%">
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe src="~/games/2048-master/index.html" id="game2"></iframe>
@@ -26,19 +44,18 @@
     </div>
 
     <div class="mySlides">
-        <div class="numbertext">3 / 10</div>
+        <div class="numbertext">3 / 6</div>
         <div class="embed-responsive embed-responsive-16by9">
             <iframe src="~/games/hextris-gh-pages/index.html" id="game3"></iframe>
         </div>
     </div>
 
     <div class="mySlides">
-        <div class="numbertext">4 / 10</div>
+        <div class="numbertext">4 / 6</div>
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe src="https://play.famobi.com/maze" id="game4"></iframe>
+            <iframe src="~/games/emoji-minesweeper-gh-pages/emoji-minesweeper-gh-pages/index.html" id="game4"></iframe>
         </div>
     </div>
-
     <a class="prev" onclick="plusSlides(-1)">❮</a>
     <a class="next" onclick="plusSlides(1)">❯</a>
 

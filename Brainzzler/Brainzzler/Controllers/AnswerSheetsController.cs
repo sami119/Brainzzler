@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Brainzzler.Models;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Identity;
 
 namespace Brainzzler.Controllers
 {
@@ -53,12 +55,59 @@ namespace Brainzzler.Controllers
 
         // POST: api/AnswerSheets
         [HttpPost]
-        public async Task<ActionResult<AnswerSheet>> PostAnswerSheet(AnswerSheet answerSheet)
+        public async Task<string> PostAnswerSheet()
         {
-            _context.AnswerSheet.Add(answerSheet);
-            await _context.SaveChangesAsync();
+           // await _context.SaveChangesAsync();
             //todo get and save other stuff here
-            return CreatedAtAction("GetAnswerSheet", new { id = answerSheet.Id }, answerSheet);
+            AnswerSheet resultAnswerSheet = new AnswerSheet();
+            resultAnswerSheet.QuestionResponses = new List<QuestionResponse>();
+            resultAnswerSheet.Test = _context.Tests.Find(long.Parse(Request.Form["testId"]));
+            //проверяваме дали потребителя е логнат и какво е ид-то му
+            var claimsIdentity = User.Identity as ClaimsIdentity;
+            if (claimsIdentity != null)
+            {
+                var userIdClaim = claimsIdentity.Claims
+                    .FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
+
+                if (userIdClaim != null)
+                {
+                    //има такъв потребител
+                    var userIdValue = userIdClaim.Value;
+                    resultAnswerSheet.UserId = userIdValue;
+                    resultAnswerSheet.UserName = User.Identity.Name;
+                }
+                else
+                {
+                    resultAnswerSheet.UserId = "0";
+                    resultAnswerSheet.UserName = "Guest";
+                }
+            }
+            else
+            {
+                resultAnswerSheet.UserId = "0";
+                resultAnswerSheet.UserName = "Guest";
+            }
+
+            var questionResponses = Request.Form["QuestionResponses"];
+            foreach (var item in questionResponses)
+            {
+                Answer answer = _context.Answers.Find(int.Parse(item));
+                Question question = _context.Questions.Where(q => q.Answers.Contains(answer)).Single();
+                QuestionResponse questionResponse = new QuestionResponse();
+                questionResponse.Question = question;
+                questionResponse.SelectedAnswers = new List<Answer>() { answer };
+                questionResponse.TextAnswer = "";
+                resultAnswerSheet.QuestionResponses.Add(questionResponse);
+            }
+
+            Score score = new Score();
+            score.CurrentScore = double.Parse(Request.Form["Score"]);
+            score.MaxScore = 0;
+            resultAnswerSheet.Score = score;
+            var answerSheet = _context.AnswerSheet.Add(resultAnswerSheet);
+            await _context.SaveChangesAsync();
+
+            return "{\"status\": \"ok\"}";
         }
         
         private bool AnswerSheetExists(long id)

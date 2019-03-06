@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Brainzzler.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Brainzzler.Controllers
 {
+    [Authorize]
     public class TestsController : Controller
     {
         private readonly Brainzzler_DBContext _context;
