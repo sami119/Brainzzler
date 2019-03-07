@@ -41,7 +41,7 @@
                 console.log("Correct");
                 answerSheet.score += parseFloat(questionScore);
             } else {
-                alert(data.wrongText);
+                //alert(data.wrongText); да се добави като функционалност.
             }
             console.log(questionId);
             answerSheet.answers[questionId] = answerId;

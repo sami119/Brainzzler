@@ -112,7 +112,7 @@ namespace Brainzzler.Areas.Identity.Pages.Account
                 }
 
                 if (invalidLoginAttempt) {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Неуспешен опит за влизане");
                     return Page();
                 }
             }

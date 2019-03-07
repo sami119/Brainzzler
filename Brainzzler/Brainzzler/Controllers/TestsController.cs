@@ -23,7 +23,7 @@ namespace Brainzzler.Controllers
         // GET: Tests
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Tests.ToListAsync());
+           return View(await _context.Tests.ToListAsync());
         }
 
         // GET: Tests/Details/5

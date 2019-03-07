@@ -33,13 +33,6 @@ namespace Brainzzler
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                try
-                {
-                    QuizzSeed.Initialize(services);
-                }catch(Exception e)
-                {
-
-                }
             }
             host.Run();
         }

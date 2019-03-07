@@ -45,7 +45,9 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    /*margin-bottom: 60px;*/
+    width: 100%;
+    height: auto;
 }
 
 .footer {
@@ -54,12 +56,22 @@ body {
     width: 100%;
     white-space: nowrap;
     /* Set the fixed height of the footer here */
-    height: 60px;
+    height: auto;
     line-height: 60px; /* Vertically center the text there */
+    text-align: center;
+    color: black;
+}
+
+.footer p {
+    text-align: center;
+    color: black;
 }
 
 #footer_layout {
     background-image: url(../images/footerbg.png);
+    background-repeat: repeat;
+    background-size: 100% 100%;
+    color: black;
 }
 
 .StartGame {
@@ -94,8 +106,45 @@ body {
 }
 
 .question {
-    background-color: aqua;
     padding: 20px;
     font-family: Sunday;
+    color: black;
+    text-align:center;
+}
+
+.answerButton {
+    background-color: #0b77dc;
+    padding: 20px;
+    margin: 5px;
+    font-family: Sunday;
     color: white;
+    border: none;
+}
+
+@media only screen and (max-width: 1024px)  {
+    .banner h2{
+        font-size: 25px;
+    }
+
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .footer  {
+        word-wrap: break-word;
+        max-width: 100%;
+        width: 100%;
+        position: relative;
+        display: block;
+        text-align: center;
+    }
+
+        .footer p {
+            white-space: pre-wrap;
+            text-align: center;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+   
 }

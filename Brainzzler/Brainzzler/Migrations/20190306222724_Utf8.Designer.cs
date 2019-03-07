@@ -4,14 +4,16 @@ using Brainzzler.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Brainzzler.Migrations
 {
     [DbContext(typeof(Brainzzler_DBContext))]
-    partial class Brainzzler_DBContextModelSnapshot : ModelSnapshot
+    [Migration("20190306222724_Utf8")]
+    partial class Utf8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,7 +30,7 @@ namespace Brainzzler.Migrations
                     b.Property<string>("AnswerText")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .IsUnicode(false);
+                        .IsUnicode(true);
 
                     b.Property<short>("Correct");
 
@@ -240,7 +242,7 @@ namespace Brainzzler.Migrations
                     b.Property<string>("QuestionText")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .IsUnicode(false);
+                        .IsUnicode(true);
 
                     b.Property<double>("Score");
 
@@ -303,7 +305,7 @@ namespace Brainzzler.Migrations
                         .IsRequired()
                         .HasColumnName("Test")
                         .HasMaxLength(100)
-                        .IsUnicode(false);
+                        .IsUnicode(true);
 
                     b.HasKey("Id");
 

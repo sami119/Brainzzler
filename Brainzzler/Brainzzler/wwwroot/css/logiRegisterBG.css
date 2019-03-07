@@ -1,5 +1,6 @@
 ﻿.bg-all {
     background-image: url(../images/bg-login-register.png);
+    background-repeat: repeat;
 }
 
 .banner h1 {
