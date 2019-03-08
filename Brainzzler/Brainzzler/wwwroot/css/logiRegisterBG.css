@@ -1,10 +1,16 @@
-﻿.bg-all {
+﻿@font-face {
+    font-family: 'SundayRegular';
+    src: url('fonts/SundayRegular.eot');
+    src: url('fonts/SundayRegular.eot') format('embedded-opentype'), url('fonts/SundayRegular.woff2') format('woff2'), url('fonts/SundayRegular.woff') format('woff'), url('fonts/SundayRegular.ttf') format('truetype'), url('fonts/SundayRegular.svg#SundayRegular') format('svg');
+}
+
+.bg-all {
     background-image: url(../images/bg-login-register.png);
     background-repeat: repeat;
 }
 
 .banner h1 {
-    font-family: Sunday;
+    font-family: 'SundayRegular';
     font-size: 53px;
     color: rgb(0, 0, 0);
 }
@@ -16,7 +22,7 @@
 }
 
 .link {
-    font-family: Sunday;
+    font-family: 'SundayRegular';
     color: black;
 }
 
