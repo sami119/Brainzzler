@@ -29,7 +29,7 @@
                 <img class="img-fluid" src="images\logo.png" alt="logo">
             </div>
             <div style="vertical-align: middle; display: inline-block; text-align: left; margin-left: 10px;">
-                <h1>Brainzzler.com</h1>
+                <h1>Brainzzler </h1>
                 <h2>Забавлявай се, докато учиш!</h2>
             </div>
         </div>
@@ -38,7 +38,7 @@
     <header>
         <nav class="sticky-top navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Brainzzler.com</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Brainzzler</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -60,15 +60,15 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container" style="margin-bottom: 30px">
         <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3" style="margin: 50px;">
+        <main role="main" class="pb-3" style="margin-top: 50px; margin-bottom: 100px;">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted" id="footer_layout">
-            <p>&copy; 2019 - Brainzzler.com - GNU license - Разработен за Национална олимпиада по Информационни технологии</p>
+            <p>&copy; 2019 - Brainzzler - GNU license - Разработен за Национална олимпиада по Информационни технологии</p>
     </footer>
 
     <environment include="Development">

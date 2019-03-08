@@ -15,7 +15,7 @@
     <div class="mySlides">
         @{
             var pointsRequred = 5;
-            if (ViewBag.Points > pointsRequred)
+            if (ViewBag.Points >= pointsRequred)
             {
                 <div class="container" style="width: 100%">
                     <div class="embed-responsive embed-responsive-16by9">
@@ -36,7 +36,7 @@
     <div class="mySlides">
         @{
             pointsRequred = 10;
-            if (ViewBag.Points > pointsRequred)
+            if (ViewBag.Points >= pointsRequred)
             {
                 <div class="container" style="width: 100%">
                     <div class="embed-responsive embed-responsive-16by9">
@@ -57,7 +57,7 @@
     <div class="mySlides">
         @{
             pointsRequred = 15;
-            if (ViewBag.Points > pointsRequred)
+            if (ViewBag.Points >= pointsRequred)
             {
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe src="~/games/hextris-gh-pages/index.html" id="game3"></iframe>
@@ -76,7 +76,7 @@
     <div class="mySlides">
         @{
             pointsRequred = 20;
-            if (ViewBag.Points > pointsRequred)
+            if (ViewBag.Points >= pointsRequred)
             {
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe src="~/games/emoji-minesweeper-gh-pages/emoji-minesweeper-gh-pages/index.html" id="game4"></iframe>
