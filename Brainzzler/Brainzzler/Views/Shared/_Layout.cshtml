@@ -61,14 +61,18 @@
         </nav>
     </header>
     <div class="container" style="margin-bottom: 30px">
-       @* <partial name="_CookieConsentPartial" />*@
+        @* <partial name="_CookieConsentPartial" />*@
         <main role="main" class="pb-3" style="margin-top: 50px; margin-bottom: 100px;">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted" id="footer_layout">
-            <p>&copy; 2019 - Brainzzler - GNU license - Разработен за Национална олимпиада по Информационни технологии</p>
+        <p>
+            &copy; 2019 - Brainzzler
+            - GNU license - Разработен за Национална олимпиада по Информационни технологии - 
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </p>
     </footer>
 
     <environment include="Development">
