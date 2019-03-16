@@ -18,17 +18,17 @@
             if (ViewBag.Points >= pointsRequred)
             {
                 <div class="container" style="width: 100%">
-                    <div class="embed-responsive embed-responsive-16by9">
+                    <div class="embed-responsive embed-responsive-16by9" id="mygame">
                         <iframe src="~/games/clumsy-bird-master/index.html" id="game1"></iframe>
                     </div>
                 </div>
+                <button onclick="openFullscreen();">Open Video in Fullscreen Mode</button>
             }
             else
             {
                 <div class=" text-center embed-responsive embed-responsive-16by9" style="width: 100%; background-color:#e2f0ef;">
                     <p>Трябва да имаш поне @pointsRequred точки, за да играеш на тази игра.</p>
                 </div>
-
             }
         }
     </div>
