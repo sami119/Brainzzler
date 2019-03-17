@@ -18,11 +18,11 @@
             if (ViewBag.Points >= pointsRequred)
             {
                 <div class="container" style="width: 100%">
-                    <div class="embed-responsive embed-responsive-16by9" id="mygame">
+                    <div class="embed-responsive embed-responsive-16by9" id="mygame1">
                         <iframe src="~/games/clumsy-bird-master/index.html" id="game1"></iframe>
                     </div>
                 </div>
-                <button onclick="openFullscreen();">Open Video in Fullscreen Mode</button>
+                <button onclick="openFullscreen(1);">Open Video in Fullscreen Mode</button>
             }
             else
             {
@@ -39,10 +39,11 @@
             if (ViewBag.Points >= pointsRequred)
             {
                 <div class="container" style="width: 100%">
-                    <div class="embed-responsive embed-responsive-16by9">
+                    <div class="embed-responsive embed-responsive-16by9" id="mygame2">
                         <iframe src="~/games/2048-master/index.html" id="game2"></iframe>
                     </div>
                 </div>
+                <button onclick="openFullscreen(2);">Open Video in Fullscreen Mode</button>
             }
             else
             {
@@ -59,9 +60,10 @@
             pointsRequred = 15;
             if (ViewBag.Points >= pointsRequred)
             {
-                <div class="embed-responsive embed-responsive-16by9">
+                <div class="embed-responsive embed-responsive-16by9" id="mygame3">
                     <iframe src="~/games/hextris-gh-pages/index.html" id="game3"></iframe>
                 </div>
+                <button onclick="openFullscreen(3);">Open Video in Fullscreen Mode</button>
             }
             else
             {
@@ -78,9 +80,10 @@
             pointsRequred = 20;
             if (ViewBag.Points >= pointsRequred)
             {
-                <div class="embed-responsive embed-responsive-16by9">
+                <div class="embed-responsive embed-responsive-16by9" id="mygame4">
                     <iframe src="~/games/emoji-minesweeper-gh-pages/emoji-minesweeper-gh-pages/index.html" id="game4"></iframe>
                 </div>
+                <button onclick="openFullscreen(4);">Open Video in Fullscreen Mode</button>
             }
             else
             {

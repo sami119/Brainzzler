@@ -30,8 +30,20 @@ function showSlides(n) {
     captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 
-var elem = document.getElementById("mygame");
-function openFullscreen() {
+var elem;
+function openFullscreen(id) {
+    if (id == "1") {
+        elem = document.getElementById("mygame1");
+    }
+    if (id == "2") {
+        elem = document.getElementById("mygame2");
+    }
+    if (id == "3") {
+        elem = document.getElementById("mygame3");
+    }
+    if (id == "4") {
+        elem = document.getElementById("mygame4");
+    }
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
   } else if (elem.mozRequestFullScreen) { /* Firefox */
