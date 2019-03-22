@@ -46,10 +46,5 @@ namespace Brainzzler.Controllers
             }
                 return View();
         }
-
-        public IActionResult TwoZeroFourEight()
-        {
-            return View();
-        }
     }
 }
