@@ -23,6 +23,12 @@
             <td>
                 <a asp-action="Details" asp-route-id="@item.Id">Започни теста</a>
             </td>
+            <td>
+                <a asp-action="Create" asp-route-id="@item.Id">create</a>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">edit</a>
+            </td>
         </tr>
 }
     </tbody>

@@ -1,4 +1,4 @@
-﻿namespace Brainzzler.Models
+namespace Brainzzler.Models
 {
     public class Score
     {
