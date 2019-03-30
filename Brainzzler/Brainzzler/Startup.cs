@@ -49,6 +49,13 @@ namespace Brainzzler
             services.AddDbContext<Brainzzler_DBContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BraizzlerDatabase")));
 
+            //services.AddDbContext<BrainzzlerDbContext>(options =>
+            //    options.UseSqlServer(
+            //        Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDefaultIdentity<IdentityUser>()
+            //    .AddDefaultUI(UIFramework.Bootstrap4)
+            //    .AddEntityFrameworkStores<Brainzzler_DBContext>();
+
             services.AddDbContext<BrainzzlerDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
