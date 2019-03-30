@@ -131,7 +131,6 @@ C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Deb
 C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
 C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
 C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutLR.g.cshtml.cs
-C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.csprojAssemblyReference.cache
 D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\Tests\Create.g.cshtml.cs
 D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\Tests\Delete.g.cshtml.cs
 D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Razor\Views\Tests\Details.g.cshtml.cs

@@ -1,0 +1,4 @@
+C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\LogicTests\obj\Debug\netcoreapp2.2\LogicTests.csprojAssemblyReference.cache
+C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\LogicTests\obj\Debug\netcoreapp2.2\LogicTests.csproj.CoreCompileInputs.cache
+C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\LogicTests\obj\Debug\netcoreapp2.2\LogicTests.AssemblyInfoInputs.cache
+C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\LogicTests\obj\Debug\netcoreapp2.2\LogicTests.AssemblyInfo.cs
