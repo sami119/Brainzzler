@@ -45,7 +45,7 @@ namespace Brainzzler.Models
                 entity.Property(e => e.AnswerText)
                     .IsRequired()
                     .HasMaxLength(255)
-                    .IsUnicode(false);
+                    .IsUnicode(true);
             });
 
             modelBuilder.Entity<AspNetRoleClaims>(entity =>
@@ -155,7 +155,7 @@ namespace Brainzzler.Models
                 entity.Property(e => e.QuestionText)
                     .IsRequired()
                     .HasMaxLength(255)
-                    .IsUnicode(false);
+                    .IsUnicode(true);
             });
 
             modelBuilder.Entity<Test>(entity =>
@@ -164,7 +164,7 @@ namespace Brainzzler.Models
                     .IsRequired()
                     .HasColumnName("Test")
                     .HasMaxLength(100)
-                    .IsUnicode(false);
+                    .IsUnicode(true);
             });
 
           
