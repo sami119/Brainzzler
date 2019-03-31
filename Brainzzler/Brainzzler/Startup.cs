@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Brainzzler.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Brainzzler.Models;
@@ -48,9 +49,19 @@ namespace Brainzzler
             services.AddDbContext<Brainzzler_DBContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BraizzlerDatabase")));
 
+            //services.AddDbContext<BrainzzlerDbContext>(options =>
+            //    options.UseSqlServer(
+            //        Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDefaultIdentity<IdentityUser>()
+            //    .AddDefaultUI(UIFramework.Bootstrap4)
+            //    .AddEntityFrameworkStores<Brainzzler_DBContext>();
+
+            services.AddDbContext<BrainzzlerDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
-                .AddEntityFrameworkStores<Brainzzler_DBContext>();
+                .AddEntityFrameworkStores<BrainzzlerDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
