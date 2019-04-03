@@ -5,21 +5,6 @@ using Brainzzler.Models;
 
 namespace Brainzzler.Models
 {
-    //[TestClass]
-    //public class UnitTest1
-    //{
-    //    [TestMethod]
-    //    public void TestMethod23()
-    //    {
-    //        Brainzzler_DBContext context;
-    //        context = new Brainzzler_DBContext();
-    //        var controller = new TestsController(context);
-    //        //Task<IActionResult> result = controller.Details(1) ;
-    //        var result = controller.Details(1) as ViewResult;
-    //        Assert.AreEqual("1", "1");
-    //    }
-    //}
-
     public partial class Brainzzler_DBContext : DbContext
     {
         public Brainzzler_DBContext()
@@ -40,14 +25,16 @@ namespace Brainzzler.Models
         public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
+        public virtual DbSet<QuestionResponse> QuestionResponse { get; set; }
         public virtual DbSet<Test> Tests { get; set; }
+        public virtual DbSet<Score> Scores { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Brainzzler_DB;Trusted_Connection=True;");
+                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                //                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Brainzzler_DB;Trusted_Connection=True;");
             }
         }
 
@@ -182,7 +169,7 @@ namespace Brainzzler.Models
                     .IsUnicode(true);
             });
 
-          
+
         }
 
         public DbSet<Brainzzler.Models.AnswerSheet> AnswerSheet { get; set; }

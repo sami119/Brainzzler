@@ -21,9 +21,14 @@ namespace Brainzzler.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Points = 0;
-            var claimsIdentity = User.Identity as ClaimsIdentity;
-            if (claimsIdentity != null)
+            ViewBag.Points = Points();
+            return View();
+        }
+
+        public double Points()
+        {
+            double points = 0;
+            if (User.Identity is ClaimsIdentity claimsIdentity)
             {
                 var userIdClaim = claimsIdentity.Claims
                     .FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
@@ -34,17 +39,12 @@ namespace Brainzzler.Controllers
                     var userIdValue = userIdClaim.Value;
 
                     //calculate total points
-                    var points = _context.AnswerSheet
+                    points = _context.AnswerSheet
                         .Where(answerSheet => answerSheet.UserId == userIdValue).
                         Sum(answerSheet => answerSheet.Score.CurrentScore);
-                    ViewBag.Points = points;
                 }
             }
-            else
-            {
-
-            }
-                return View();
+            return points;
         }
     }
 }
