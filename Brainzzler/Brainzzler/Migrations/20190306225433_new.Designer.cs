@@ -30,7 +30,7 @@ namespace Brainzzler.Migrations
                     b.Property<string>("AnswerText")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .IsUnicode(false);
+                        .IsUnicode(true);
 
                     b.Property<short>("Correct");
 
@@ -242,7 +242,7 @@ namespace Brainzzler.Migrations
                     b.Property<string>("QuestionText")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .IsUnicode(false);
+                        .IsUnicode(true);
 
                     b.Property<double>("Score");
 
@@ -305,7 +305,7 @@ namespace Brainzzler.Migrations
                         .IsRequired()
                         .HasColumnName("Test")
                         .HasMaxLength(100)
-                        .IsUnicode(false);
+                        .IsUnicode(true);
 
                     b.HasKey("Id");
 

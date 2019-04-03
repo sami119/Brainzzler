@@ -28,7 +28,7 @@ namespace Brainzzler.Migrations
                     b.Property<string>("AnswerText")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .IsUnicode(false);
+                        .IsUnicode(true);
 
                     b.Property<short>("Correct");
 
