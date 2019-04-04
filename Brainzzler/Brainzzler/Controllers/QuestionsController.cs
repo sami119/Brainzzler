@@ -11,7 +11,7 @@ namespace Brainzzler.Controllers
 {
 
     /// <summary>
-    /// Този контролер отговаря за въпросите
+    /// Този контролер управлява изпращането на въпросите от базата към jQuery-то, за използването им на страницата със тестове.
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
@@ -28,18 +28,16 @@ namespace Brainzzler.Controllers
             _context = context;
         }
 
-        
         /// <summary>
-        /// взима от базата въпрос бо дадено ид, ако не намери връша грешка 404
+        /// Връща първия въпрос със дадено ид към jQuery който ги връща към вюто
         /// </summary>
         /// <param name="id"></param>
-        /// <returns>дадения въпрос във json формат</returns>
-        // GET: api/Questions/5
+        /// <returns>api/Questions/{id}</returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult<Question>> GetQuestion(long id)
+        public ActionResult<Question> GetQuestion(long id)
         {
-            var question = await _context.Questions.FindAsync(id);
-            await _context.Entry(question).Collection(e => e.Answers).LoadAsync();
+            var question = _context.Questions.Where(c => c.Id == id).FirstOrDefault();
+            //_context.Entry(question).Collection(e => e.Answers).Load();
 
             if (question == null)
             {
@@ -48,7 +46,6 @@ namespace Brainzzler.Controllers
 
             return question;
         }
-
         
         /// <summary>
         /// проверява дали въпроса съществува в базата дани

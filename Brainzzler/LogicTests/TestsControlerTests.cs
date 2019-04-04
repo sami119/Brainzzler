@@ -46,6 +46,7 @@ namespace LogicTests
             var controller = new TestsController(mockContext.Object);
             var TestResult = controller.Details(1);
 
+            //Assert
             Assert.AreEqual(test, TestResult.Result);
         }
     }

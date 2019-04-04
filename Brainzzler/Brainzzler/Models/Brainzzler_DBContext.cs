@@ -172,6 +172,6 @@ namespace Brainzzler.Models
 
         }
 
-        public DbSet<Brainzzler.Models.AnswerSheet> AnswerSheet { get; set; }
+        public virtual DbSet<Brainzzler.Models.AnswerSheet> AnswerSheet { get; set; }
     }
 }
