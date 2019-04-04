@@ -12,22 +12,25 @@ namespace Brainzzler.Controllers
     [Authorize]
     public class GamesController : Controller
     {
+
         private readonly Brainzzler_DBContext _context;
 
+        /// <summary>
+        /// Инициализира контекста на базата данни
+        /// </summary>
+        /// <param name="context"></param>
         public GamesController(Brainzzler_DBContext context)
         {
             _context = context;
         }
 
+        /// <summary>
+        /// Вкарва точките събрани от user-a във viewBag за да се използват във вюто му
+        /// </summary>
+        /// <returns>/Games -> index.cshtml</returns>
         public IActionResult Index()
         {
-            ViewBag.Points = Points();
-            return View();
-        }
-
-        public double Points()
-        {
-            double points = 0;
+            ViewBag.Points = 0;
             if (User.Identity is ClaimsIdentity claimsIdentity)
             {
                 var userIdClaim = claimsIdentity.Claims
@@ -39,12 +42,12 @@ namespace Brainzzler.Controllers
                     var userIdValue = userIdClaim.Value;
 
                     //calculate total points
-                    points = _context.AnswerSheet
+                    ViewBag.Points = _context.AnswerSheet
                         .Where(answerSheet => answerSheet.UserId == userIdValue).
                         Sum(answerSheet => answerSheet.Score.CurrentScore);
                 }
             }
-            return points;
+            return View();
         }
     }
 }

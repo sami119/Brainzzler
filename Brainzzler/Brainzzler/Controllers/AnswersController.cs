@@ -24,9 +24,10 @@ namespace Brainzzler.Controllers
 
         // GET: api/Answers/5
         [HttpGet("{id}")]
-        public ActionResult<Answer> GetAnswer(long id)
+        public async Task<ActionResult<Answer>> GetAnswer(long id)
         {
-            var answer = _context.Answers.FirstOrDefault(x => x.Id == id);
+            var answer = await _context.Answers.FindAsync(id);
+            var question = _context.Questions.Where(e => e.Answers.Contains(answer)).Single();
 
             if (answer == null)
             {

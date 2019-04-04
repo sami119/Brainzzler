@@ -27,7 +27,7 @@ namespace Brainzzler.Models
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<QuestionResponse> QuestionResponse { get; set; }
         public virtual DbSet<Test> Tests { get; set; }
-        public virtual DbSet<Score> Scores { get; set; }
+        public virtual DbSet<Score> Score { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

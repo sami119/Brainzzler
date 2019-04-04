@@ -8,14 +8,24 @@ using Brainzzler.Models;
 
 namespace Brainzzler.Controllers
 {
+    /// <summary>
+    /// Този контролер оправлява вютата на Index и Privacy
+    /// </summary>
     public class HomeController : Controller
     {
-
+        /// <summary>
+        /// Врща вюто на началната страница
+        /// </summary>
+        /// <returns>Index.cshtml</returns>
         public IActionResult Index()
         {
             return View("Index");
         }
 
+        /// <summary>
+        /// Връща вюто на Privacy страницата 
+        /// </summary>
+        /// <returns>Privacy.cshtml</returns>
         public IActionResult Privacy()
         {
             return View("Privacy");
