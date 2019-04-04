@@ -10,7 +10,7 @@ using Brainzzler.Models;
 namespace Brainzzler.Controllers
 {
     /// <summary>
-    /// Този контролер управлява изпращането на отговорите от базата към jQuery-то, за използването им на страницата със тестове.
+    /// The controller is responsible for sending the answers from the DB to the jQuery for their using on the page with the tests.
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
@@ -19,7 +19,7 @@ namespace Brainzzler.Controllers
         private readonly Brainzzler_DBContext _context;
 
         /// <summary>
-        /// Инициализира контекста
+        /// Intializes the context
         /// </summary>
         /// <param name="context"></param>
         public AnswersController(Brainzzler_DBContext context)
@@ -29,7 +29,7 @@ namespace Brainzzler.Controllers
 
 
         /// <summary>
-        /// Връща първия отговор със дадено ид към jQuery който ги записва във answersheet
+        /// Returns the first answer with the given id to jQuery, whitch saves them in the answersheet
         /// </summary>
         /// <param name="id"></param>
         /// <returns>GET: api/Answers/{id}</returns>
@@ -48,7 +48,7 @@ namespace Brainzzler.Controllers
         }      
 
         /// <summary>
-        /// Проверява дали въпроса съществува във базата данни
+        /// Checks out if the question exists in the DB
         /// </summary>
         /// <param name="id"></param>
         /// <returns>true or false</returns>

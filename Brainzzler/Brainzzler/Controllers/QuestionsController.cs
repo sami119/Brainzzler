@@ -11,7 +11,7 @@ namespace Brainzzler.Controllers
 {
 
     /// <summary>
-    /// Този контролер управлява изпращането на въпросите от базата към jQuery-то, за използването им на страницата със тестове.
+    /// This controler is responsible for sending the questions from te DB to the jQuery for their using in the page with the tests
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
@@ -20,7 +20,7 @@ namespace Brainzzler.Controllers
         private readonly Brainzzler_DBContext _context;
 
         /// <summary>
-        /// Инициализира контекста
+        /// Initializes the context
         /// </summary>
         /// <param name="context"></param>
         public QuestionsController(Brainzzler_DBContext context)
@@ -29,7 +29,7 @@ namespace Brainzzler.Controllers
         }
 
         /// <summary>
-        /// Връща първия въпрос със дадено ид към jQuery който ги връща към вюто
+        /// Returns the first question with the given id to the jQuery, which returns them to the View
         /// </summary>
         /// <param name="id"></param>
         /// <returns>api/Questions/{id}</returns>
@@ -48,10 +48,10 @@ namespace Brainzzler.Controllers
         }
         
         /// <summary>
-        /// проверява дали въпроса съществува в базата дани
+        /// Checks out if the question exists in the DB
         /// </summary>
         /// <param name="id"></param>
-        /// <returns>true ако е открит, false ако не съществува</returns>
+        /// <returns>true if it is found, false does not exist</returns>
         private bool QuestionExists(long id)
         {
             return _context.Questions.Any(e => e.Id == id);

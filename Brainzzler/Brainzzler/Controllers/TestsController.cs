@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Brainzzler.Controllers
 {
     /// <summary>
-    /// Контролер отговаряш за тестовете
+    /// this controller is responsible for the tests
     /// </summary>
     [Authorize]
     public class TestsController : Controller
@@ -19,7 +19,7 @@ namespace Brainzzler.Controllers
         private readonly Brainzzler_DBContext _context;
 
         /// <summary>
-        /// Инициализира контекста
+        /// Initializes the context
         /// </summary>
         /// <param name="context"></param>
         public TestsController(Brainzzler_DBContext context)
@@ -28,7 +28,7 @@ namespace Brainzzler.Controllers
         }
 
         /// <summary>
-        /// Изкарва всички тестове в базата
+        /// Returns(изкарва) all tests in the DB
         /// </summary>
         /// <returns>/Tests</returns>
         // GET: Tests
@@ -38,13 +38,12 @@ namespace Brainzzler.Controllers
         }
 
         /// <summary>
-        /// Връща теста по дадено id.
-        /// Проверява дали теста съществува ако да,
-        /// взема го от базата. Зарежда всички въпроси и отговори от теста 
+        /// Returns the test on the given id
+        /// Checks if the test exists,
+        /// if it does, it takes it from the DB and loads all the questions and answers from the test
         /// </summary>
         /// <param name="id"></param>
         /// <returns>/Tests/Details/{id}</returns>
-        // GET: Tests/Details/5
         public async Task<IActionResult> Details(long id)
         {
             if (TestExists(id))

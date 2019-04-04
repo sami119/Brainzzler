@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Brainzzler.Controllers
 {
     /// <summary>
-    /// Този контролер управлява изпращането на събраните от потребителя точки към страницата с игрите
+    /// This controller is responsible for sending of the gained by the user points to the page with the games
     /// </summary>
     [Authorize]
     public class GamesController : Controller
@@ -20,7 +20,7 @@ namespace Brainzzler.Controllers
         private readonly IUserIdenityProvider _userIdenityProvider;
 
         /// <summary>
-        /// Инициализира контекста, и IdenityProvider-a
+        /// Intializes the context and the IdenityProvider
         /// </summary>
         /// <param name="context"></param>
         /// <param name="userIdenityProvider"></param>
@@ -31,17 +31,17 @@ namespace Brainzzler.Controllers
         }
 
         /// <summary>
-        /// Вкарва точките събрани от потребителя във viewBag за да се използват в страницата с игрите
+        /// Puts the points gained by the user in the viewBag for being used in the page with the games
         /// </summary>
         /// <returns>/Games -> index.cshtml</returns>
         public IActionResult Index()
         {
             ViewBag.Points = Points();
-            return View();
+            return View("Index");
         }
 
         /// <summary>
-        /// Сумира точките на потребителя.
+        /// Sums the points of the user
         /// </summary>
         /// <returns>points</returns>
         public double Points()
