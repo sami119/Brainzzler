@@ -32,9 +32,9 @@ namespace Brainzzler.Controllers
         /// </summary>
         /// <returns>/Tests</returns>
         // GET: Tests
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Tests.ToListAsync());
+            return View(_context.Tests.ToList());
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Brainzzler.Controllers
         // GET: Tests/Create
         public IActionResult Create()
         {
-            return View();
+            return View("Create");
         }
 
         // POST: Tests/Create

@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Brainzzler.Services;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LogicTests
 {
@@ -18,24 +19,6 @@ namespace LogicTests
         [SetUp]
         public void Setup()
         {
-            //initialize
-            Answer answer = new Answer { Id = 1, AnswerText = "Отговор 1", Correct = 1, WrongText = "" };
-            Answer answer2 = new Answer { Id = 2, AnswerText = "Отговор 2", Correct = 0, WrongText = "" };
-            Answer answer3 = new Answer { Id = 3, AnswerText = "Отговор 3", Correct = 0, WrongText = "" };
-            List<Answer> answers = new List<Answer> { answer, answer2, answer3 };
-
-            Question question = new Question { Answers = answers, Id = 1, QuestionText = "Въпрос", Score = 2, WrongText = "" };
-            List<Question> questions = new List<Question> { question };
-
-            var questionResponse = new QuestionResponse { Id = 1, Question = question, SelectedAnswers = new List<Answer> { answer }, TextAnswer = "" };
-            List<QuestionResponse> questionResponses = new List<QuestionResponse> { questionResponse };
-
-            Score score = new Score { Id = 1, CurrentScore = 2, MaxScore = 2, Note = "" };
-
-            Test test = new Test { Id = 1, Test_Name = "Начално ниво", Questions = questions };
-
-            var answerSheet = new AnswerSheet { Id = 1, QuestionResponses = questionResponses, Score = score, Test = test, UserId = "1", UserName = "TestUser" };
-
         }
 
         [Test]
@@ -94,7 +77,7 @@ namespace LogicTests
         {
             var answerSheet = new AnswerSheet { Id = 1, UserId = "1", UserName = "TestUser" };
 
-            var data = new List<AnswerSheet> { answerSheet}.AsQueryable();
+            var data = new List<AnswerSheet> { answerSheet }.AsQueryable();
 
             var mockSet = new Mock<DbSet<AnswerSheet>>();
             mockSet.As<IQueryable<AnswerSheet>>().Setup(m => m.Provider).Returns(data.Provider);
@@ -114,6 +97,33 @@ namespace LogicTests
 
             //Assert
             Assert.AreEqual(0, points);
+        }
+
+        [Test]
+        public void GamesControllerReturnsCorrectView()
+        {
+            var answerSheet = new AnswerSheet { Id = 1, UserId = "1", UserName = "TestUser" };
+
+            var data = new List<AnswerSheet> { answerSheet }.AsQueryable();
+
+            var mockSet = new Mock<DbSet<AnswerSheet>>();
+            mockSet.As<IQueryable<AnswerSheet>>().Setup(m => m.Provider).Returns(data.Provider);
+            mockSet.As<IQueryable<AnswerSheet>>().Setup(m => m.Expression).Returns(data.Expression);
+            mockSet.As<IQueryable<AnswerSheet>>().Setup(m => m.ElementType).Returns(data.ElementType);
+            mockSet.As<IQueryable<AnswerSheet>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
+
+            var mockContext = new Mock<Brainzzler_DBContext>();
+            mockContext.Setup(set => set.AnswerSheet).Returns(mockSet.Object);
+
+            var mockIdenityProvider = new Mock<IUserIdenityProvider>();
+            mockIdenityProvider.Setup(s => s.GetCurrentUserId()).Returns("2");
+
+            //Act
+            var service = new GamesController(mockContext.Object, mockIdenityProvider.Object);
+
+            var gamesResult = service.Index() as ViewResult;
+
+            Assert.AreEqual("Index", gamesResult.ViewName);
         }
     }
 }
