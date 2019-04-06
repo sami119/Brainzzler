@@ -286,3 +286,4 @@ C:\Users\Rayna\source\repos\GitHub\Zips\Brainzzler-30.03.2019\Brainzzler-6f287d8
 C:\Users\Rayna\source\repos\GitHub\Zips\Brainzzler-30.03.2019\Brainzzler-6f287d8d6f7a04dc111382a3b38beaefaec095a7\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.pdb
 C:\Users\Rayna\source\repos\GitHub\Zips\Brainzzler-30.03.2019\Brainzzler-6f287d8d6f7a04dc111382a3b38beaefaec095a7\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.csproj.CopyComplete
 D:\My-Zone\IT-Zone\Repos\Brainzzler\Brainzzler\Brainzzler\obj\Debug\netcoreapp2.2\Brainzzler.csprojAssemblyReference.cache
+C:\Users\Rayna\source\repos\GitHub\sami\Brainzzler\Brainzzler\Brainzzler\bin\Debug\netcoreapp2.2\Brainzzler.xml

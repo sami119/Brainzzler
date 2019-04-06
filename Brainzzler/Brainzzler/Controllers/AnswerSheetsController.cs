@@ -17,6 +17,10 @@ namespace Brainzzler.Controllers
     {
         private readonly Brainzzler_DBContext _context;
 
+        /// <summary>
+        /// Initializes the context
+        /// </summary>
+        /// <param name="context"></param>
         public AnswerSheetsController(Brainzzler_DBContext context)
         {
             _context = context;
@@ -25,6 +29,10 @@ namespace Brainzzler.Controllers
        
         // PUT: api/AnswerSheets/5
         [HttpPut("{id}")]
+        /// <summary>
+        /// Finds the answersheet by id
+        /// </summary>
+        /// <param name="context"></param>
         public async Task<IActionResult> PutAnswerSheet(long id, AnswerSheet answerSheet)
         {
             if (id != answerSheet.Id)
@@ -55,6 +63,10 @@ namespace Brainzzler.Controllers
 
         // POST: api/AnswerSheets
         [HttpPost]
+
+        /// <summary>
+        ///This controller creates answersheet and insert the data into the DB. After that it saves the changes
+        /// </summary>
         public async Task<string> PostAnswerSheet()
         {
             // await _context.SaveChangesAsync();
@@ -64,7 +76,10 @@ namespace Brainzzler.Controllers
                 QuestionResponses = new List<QuestionResponse>(),
                 Test = _context.Tests.Find(long.Parse(Request.Form["testId"]))
             };
-            //проверяваме дали потребителя е логнат и какво е ид-то му
+
+            /// <summary>
+            ///Checks if the user is loged in and what is his id
+            /// </summary>
             if (User.Identity is ClaimsIdentity claimsIdentity)
             {
                 var userIdClaim = claimsIdentity.Claims
@@ -89,6 +104,9 @@ namespace Brainzzler.Controllers
                 resultAnswerSheet.UserName = "Guest";
             }
 
+            /// <summary>
+            /// Puts all the answers given during the test into answersheet.question responses
+            /// </summary>
             var questionResponses = Request.Form["QuestionResponses"];
             foreach (var item in questionResponses)
             {
@@ -114,7 +132,10 @@ namespace Brainzzler.Controllers
 
             return "{\"status\": \"ok\"}";
         }
-        
+
+        /// <summary>
+        ///Checks if the answer exists
+        /// </summary>
         private bool AnswerSheetExists(long id)
         {
             return _context.AnswerSheet.Any(e => e.Id == id);

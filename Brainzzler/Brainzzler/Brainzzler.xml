@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Brainzzler</name>
+    </assembly>
+    <members>
+        <member name="T:Brainzzler.Controllers.AnswersController">
+            <summary>
+            The controller is responsible for sending the answers from the DB to the jQuery for their using on the page with the tests.
+            </summary>
+        </member>
+        <member name="M:Brainzzler.Controllers.AnswersController.#ctor(Brainzzler.Models.Brainzzler_DBContext)">
+            <summary>
+            Intializes the context
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Brainzzler.Controllers.AnswersController.GetAnswer(System.Int64)">
+            <summary>
+            Returns the first answer with the given id to jQuery, whitch saves them in the answersheet
+            </summary>
+            <param name="id"></param>
+            <returns>GET: api/Answers/{id}</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.AnswersController.AnswerExists(System.Int64)">
+            <summary>
+            Checks out if the question exists in the DB
+            </summary>
+            <param name="id"></param>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.AnswerSheetsController.#ctor(Brainzzler.Models.Brainzzler_DBContext)">
+            <summary>
+            Initializes the context
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Brainzzler.Controllers.AnswerSheetsController.AnswerSheetExists(System.Int64)">
+             <summary>
+            Checks if the answer exists
+             </summary>
+        </member>
+        <member name="T:Brainzzler.Controllers.GamesController">
+            <summary>
+            This controller is responsible for sending of the gained by the user points to the page with the games
+            </summary>
+        </member>
+        <member name="M:Brainzzler.Controllers.GamesController.#ctor(Brainzzler.Models.Brainzzler_DBContext,Brainzzler.Services.IUserIdenityProvider)">
+            <summary>
+            Intializes the context and the IdenityProvider
+            </summary>
+            <param name="context"></param>
+            <param name="userIdenityProvider"></param>
+        </member>
+        <member name="M:Brainzzler.Controllers.GamesController.Index">
+            <summary>
+            Puts the points gained by the user in the viewBag for being used in the page with the games
+            </summary>
+            <returns>/Games -> index.cshtml</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.GamesController.Points">
+            <summary>
+            Sums the points of the user
+            </summary>
+            <returns>points</returns>
+        </member>
+        <member name="T:Brainzzler.Controllers.HomeController">
+            <summary>
+            This controller is responsible for the Views of the Index and the Privacy
+            </summary>
+        </member>
+        <member name="M:Brainzzler.Controllers.HomeController.Index">
+            <summary>
+            Returns the View of the home page
+            </summary>
+            <returns>Index.cshtml</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.HomeController.Privacy">
+            <summary>
+            Returns the View of the Privacy page 
+            </summary>
+            <returns>Privacy.cshtml</returns>
+        </member>
+        <member name="T:Brainzzler.Controllers.QuestionsController">
+            <summary>
+            This controler is responsible for sending the questions from te DB to the jQuery for their using in the page with the tests
+            </summary>
+        </member>
+        <member name="M:Brainzzler.Controllers.QuestionsController.#ctor(Brainzzler.Models.Brainzzler_DBContext)">
+            <summary>
+            Initializes the context
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Brainzzler.Controllers.QuestionsController.GetQuestion(System.Int64)">
+            <summary>
+            Returns the first question with the given id to the jQuery, which returns them to the View
+            </summary>
+            <param name="id"></param>
+            <returns>api/Questions/{id}</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.QuestionsController.QuestionExists(System.Int64)">
+            <summary>
+            Checks out if the question exists in the DB
+            </summary>
+            <param name="id"></param>
+            <returns>true if it is found, false does not exist</returns>
+        </member>
+        <member name="T:Brainzzler.Controllers.TestsController">
+            <summary>
+            this controller is responsible for the tests
+            </summary>
+        </member>
+        <member name="M:Brainzzler.Controllers.TestsController.#ctor(Brainzzler.Models.Brainzzler_DBContext)">
+            <summary>
+            Initializes the context
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Brainzzler.Controllers.TestsController.Index">
+            <summary>
+            Returns all tests in the DB
+            </summary>
+            <returns>GET: Tests</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.TestsController.Details(System.Int64)">
+            <summary>
+            Returns the test on the given id
+            Checks if the test exists,
+            if it does, it takes it from the DB and loads all the questions and answers from the test
+            </summary>
+            <param name="id"></param>
+            <returns>/Tests/Details/{id}</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.TestsController.Create">
+            <summary>
+            Returns view
+            </summary>
+            <returns>GET: Tests/Create</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.TestsController.Create(Brainzzler.Models.Test)">
+            <summary>
+            Creates test and saves changes
+            </summary>
+            <param name="test"></param>
+            <returns>POST: Tests/Create</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.TestsController.Edit(System.Nullable{System.Int64})">
+            <summary>
+            finds test by ID and returns it for future use
+            </summary>
+            <param name="id"></param>
+            <returns>GET: Tests/Edit/5</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.TestsController.Edit(System.Int64,Brainzzler.Models.Test)">
+            <summary>
+            Updates test and saves it to DB;
+            </summary>
+            <param name="id"></param>
+            <param name="test"></param>
+            <returns>POST: Tests/Edit/5</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.TestsController.Delete(System.Nullable{System.Int64})">
+            <summary>
+            finds test in DB and returns it to the view for DeleteConfirmed
+            </summary>
+            <param name="id"></param>
+            <returns>GET: Tests/Delete/5</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.TestsController.DeleteConfirmed(System.Int64)">
+            <summary>
+            Deletes test from DB and saves changes
+            </summary>
+            <param name="id"></param>
+            <returns>POST: Tests/Delete/5</returns>
+        </member>
+        <member name="M:Brainzzler.Controllers.TestsController.TestExists(System.Int64)">
+            <summary>
+            Checks if the test exists in the DB
+            </summary>
+            <param name="id"></param>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Brainzzler.Services.UserIdenityProvider.GetCurrentUserId">
+            <summary>
+            Вижда в базата данни кой е потребителя и връща ид-то му
+            </summary>
+            <returns>User.Id -> string format</returns>
+        </member>
+    </members>
+</doc>
