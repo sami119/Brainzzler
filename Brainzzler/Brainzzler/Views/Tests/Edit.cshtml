@@ -1,11 +1,11 @@
 @model Brainzzler.Models.Test
 
 @{
-    ViewData["Title"] = "Промени тест";
+    ViewData["Title"] = "РџСЂРѕРјРµРЅРё С‚РµСЃС‚";
     Layout = "_Layout";
 }
 
-<h4>Промени тест</h4>
+<h4>РџСЂРѕРјРµРЅРё С‚РµСЃС‚</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -13,17 +13,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Test_Name" class="control-label">Име</label>
+                <label asp-for="Test_Name" class="control-label">РРјРµ</label>
                 <input asp-for="Test_Name" class="form-control" />
                 <span asp-validation-for="Test_Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Запази" class="StartGame" />
+                <input type="submit" value="Р—Р°РїР°Р·Рё" class="StartGame" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Назад</a>
+    <a asp-action="Index">РќР°Р·Р°Рґ</a>
 </div>

@@ -28,10 +28,9 @@ namespace Brainzzler.Controllers
         }
 
         /// <summary>
-        /// Returns(изкарва) all tests in the DB
+        /// Returns all tests in the DB
         /// </summary>
-        /// <returns>/Tests</returns>
-        // GET: Tests
+        /// <returns>GET: Tests</returns>
         public IActionResult Index()
         {
             return View(_context.Tests.ToList());
@@ -64,15 +63,20 @@ namespace Brainzzler.Controllers
             }
         }
 
-        // GET: Tests/Create
+        /// <summary>
+        /// Returns view
+        /// </summary>
+        /// <returns>GET: Tests/Create</returns>
         public IActionResult Create()
         {
             return View("Create");
         }
 
-        // POST: Tests/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Creates test and saves changes
+        /// </summary>
+        /// <param name="test"></param>
+        /// <returns>POST: Tests/Create</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Test_Name")] Test test)
@@ -86,7 +90,11 @@ namespace Brainzzler.Controllers
             return View(test);
         }
 
-        // GET: Tests/Edit/5
+        /// <summary>
+        /// finds test by ID and returns it for future use
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>GET: Tests/Edit/5</returns>
         public async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
@@ -102,9 +110,12 @@ namespace Brainzzler.Controllers
             return View(test);
         }
 
-        // POST: Tests/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Updates test and saves it to DB;
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="test"></param>
+        /// <returns>POST: Tests/Edit/5</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long id, [Bind("Id,Test_Name")] Test test)
@@ -137,7 +148,11 @@ namespace Brainzzler.Controllers
             return View(test);
         }
 
-        // GET: Tests/Delete/5
+        /// <summary>
+        /// finds test in DB and returns it to the view for DeleteConfirmed
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>GET: Tests/Delete/5</returns>
         public async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
@@ -155,7 +170,11 @@ namespace Brainzzler.Controllers
             return View(test);
         }
 
-        // POST: Tests/Delete/5
+        /// <summary>
+        /// Deletes test from DB and saves changes
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>POST: Tests/Delete/5</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long id)
@@ -166,14 +185,14 @@ namespace Brainzzler.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Checks if the test exists in the DB
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>true or false</returns>
         private bool TestExists(long id)
         {
             return _context.Tests.Any(e => e.Id == id);
-        }
-
-        public Brainzzler_DBContext DBContext()
-        {
-            return _context;
         }
     }
 }
