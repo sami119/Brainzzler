@@ -55,7 +55,7 @@
                 $("#quizz .submit-box").show();
             }
         }, "json");
-
+            
         //check if answer is correct
         //show wrong/correct answer
         //if answer is wrong, show extra data

@@ -57,14 +57,15 @@ namespace Brainzzler.Controllers
         [HttpPost]
         public async Task<string> PostAnswerSheet()
         {
-           // await _context.SaveChangesAsync();
+            // await _context.SaveChangesAsync();
             //todo get and save other stuff here
-            AnswerSheet resultAnswerSheet = new AnswerSheet();
-            resultAnswerSheet.QuestionResponses = new List<QuestionResponse>();
-            resultAnswerSheet.Test = _context.Tests.Find(long.Parse(Request.Form["testId"]));
+            AnswerSheet resultAnswerSheet = new AnswerSheet
+            {
+                QuestionResponses = new List<QuestionResponse>(),
+                Test = _context.Tests.Find(long.Parse(Request.Form["testId"]))
+            };
             //проверяваме дали потребителя е логнат и какво е ид-то му
-            var claimsIdentity = User.Identity as ClaimsIdentity;
-            if (claimsIdentity != null)
+            if (User.Identity is ClaimsIdentity claimsIdentity)
             {
                 var userIdClaim = claimsIdentity.Claims
                     .FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
@@ -93,16 +94,20 @@ namespace Brainzzler.Controllers
             {
                 Answer answer = _context.Answers.Find(int.Parse(item));
                 Question question = _context.Questions.Where(q => q.Answers.Contains(answer)).Single();
-                QuestionResponse questionResponse = new QuestionResponse();
-                questionResponse.Question = question;
-                questionResponse.SelectedAnswers = new List<Answer>() { answer };
-                questionResponse.TextAnswer = "";
+                QuestionResponse questionResponse = new QuestionResponse
+                {
+                    Question = question,
+                    SelectedAnswers = new List<Answer>() { answer },
+                    TextAnswer = ""
+                };
                 resultAnswerSheet.QuestionResponses.Add(questionResponse);
             }
 
-            Score score = new Score();
-            score.CurrentScore = double.Parse(Request.Form["Score"]);
-            score.MaxScore = 0;
+            Score score = new Score
+            {
+                CurrentScore = double.Parse(Request.Form["Score"]),
+                MaxScore = 0
+            };
             resultAnswerSheet.Score = score;
             var answerSheet = _context.AnswerSheet.Add(resultAnswerSheet);
             await _context.SaveChangesAsync();

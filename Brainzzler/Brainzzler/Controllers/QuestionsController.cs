@@ -11,7 +11,7 @@ namespace Brainzzler.Controllers
 {
 
     /// <summary>
-    /// Този контролер отговаря за въпросите
+    /// This controler is responsible for sending the questions from te DB to the jQuery for their using in the page with the tests
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
@@ -20,7 +20,7 @@ namespace Brainzzler.Controllers
         private readonly Brainzzler_DBContext _context;
 
         /// <summary>
-        /// Инициализира контекста
+        /// Initializes the context
         /// </summary>
         /// <param name="context"></param>
         public QuestionsController(Brainzzler_DBContext context)
@@ -28,18 +28,16 @@ namespace Brainzzler.Controllers
             _context = context;
         }
 
-        
         /// <summary>
-        /// взима от базата въпрос бо дадено ид, ако не намери връша грешка 404
+        /// Returns the first question with the given id to the jQuery, which returns them to the View
         /// </summary>
         /// <param name="id"></param>
-        /// <returns>дадения въпрос във json формат</returns>
-        // GET: api/Questions/5
+        /// <returns>api/Questions/{id}</returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult<Question>> GetQuestion(long id)
+        public ActionResult<Question> GetQuestion(long id)
         {
-            var question = await _context.Questions.FindAsync(id);
-            await _context.Entry(question).Collection(e => e.Answers).LoadAsync();
+            var question = _context.Questions.Where(c => c.Id == id).FirstOrDefault();
+            //_context.Entry(question).Collection(e => e.Answers).Load();
 
             if (question == null)
             {
@@ -48,13 +46,12 @@ namespace Brainzzler.Controllers
 
             return question;
         }
-
         
         /// <summary>
-        /// проверява дали въпроса съществува в базата дани
+        /// Checks out if the question exists in the DB
         /// </summary>
         /// <param name="id"></param>
-        /// <returns>true ако е открит, false ако не съществува</returns>
+        /// <returns>true if it is found, false does not exist</returns>
         private bool QuestionExists(long id)
         {
             return _context.Questions.Any(e => e.Id == id);

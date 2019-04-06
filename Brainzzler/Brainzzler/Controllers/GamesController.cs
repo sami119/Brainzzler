@@ -4,50 +4,56 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Brainzzler.Models;
+using Brainzzler.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Brainzzler.Controllers
 {
+    /// <summary>
+    /// This controller is responsible for sending of the gained by the user points to the page with the games
+    /// </summary>
     [Authorize]
     public class GamesController : Controller
     {
-
         private readonly Brainzzler_DBContext _context;
+        private readonly IUserIdenityProvider _userIdenityProvider;
 
         /// <summary>
-        /// Инициализира контекста на базата данни
+        /// Intializes the context and the IdenityProvider
         /// </summary>
         /// <param name="context"></param>
-        public GamesController(Brainzzler_DBContext context)
+        /// <param name="userIdenityProvider"></param>
+        public GamesController(Brainzzler_DBContext context, IUserIdenityProvider userIdenityProvider)
         {
             _context = context;
+            _userIdenityProvider = userIdenityProvider;
         }
 
         /// <summary>
-        /// Вкарва точките събрани от user-a във viewBag за да се използват във вюто му
+        /// Puts the points gained by the user in the viewBag for being used in the page with the games
         /// </summary>
         /// <returns>/Games -> index.cshtml</returns>
         public IActionResult Index()
         {
-            ViewBag.Points = 0;
-            if (User.Identity is ClaimsIdentity claimsIdentity)
-            {
-                var userIdClaim = claimsIdentity.Claims
-                    .FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
+            ViewBag.Points = Points();
+            return View("Index");
+        }
 
-                if (userIdClaim != null)
-                {
-                    //има такъв потребител
-                    var userIdValue = userIdClaim.Value;
+        /// <summary>
+        /// Sums the points of the user
+        /// </summary>
+        /// <returns>points</returns>
+        public double Points()
+        {
+            double points = 0;
+            var userId = _userIdenityProvider.GetCurrentUserId();
 
-                    //calculate total points
-                    ViewBag.Points = _context.AnswerSheet
-                        .Where(answerSheet => answerSheet.UserId == userIdValue).
-                        Sum(answerSheet => answerSheet.Score.CurrentScore);
-                }
-            }
-            return View();
+            //calculate total points
+            points = _context
+                .AnswerSheet.Where(answerSheet => answerSheet.UserId == userId)
+                .Sum(answerSheet => answerSheet.Score.CurrentScore);
+            return points;
         }
     }
 }

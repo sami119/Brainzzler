@@ -14,6 +14,7 @@ using Brainzzler.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Brainzzler.Models;
+using Brainzzler.Services;
 
 namespace Brainzzler
 {
@@ -64,6 +65,10 @@ namespace Brainzzler
                 .AddEntityFrameworkStores<BrainzzlerDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            //Add new services in injection container
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IUserIdenityProvider, UserIdenityProvider>();
 
             //services.AddAuthentication().AddFacebook(facebookOptions =>
             //{

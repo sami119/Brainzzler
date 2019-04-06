@@ -89,7 +89,13 @@ img {
     opacity: 0.6;
 }
 
-    .active,
-    .demo:hover {
-        opacity: 1;
-    }
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+.fullscreenButton{
+    background-color: none;
+    border:none;
+}
+
