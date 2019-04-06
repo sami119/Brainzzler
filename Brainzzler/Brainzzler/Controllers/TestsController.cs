@@ -170,5 +170,10 @@ namespace Brainzzler.Controllers
         {
             return _context.Tests.Any(e => e.Id == id);
         }
+
+        public Brainzzler_DBContext DBContext()
+        {
+            return _context;
+        }
     }
 }

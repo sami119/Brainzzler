@@ -87,6 +87,10 @@ body {
 .StartGame:hover {
     background-color: #566b75;
 }
+a.StartGame:hover{
+    text-decoration: none;
+    color:white;
+}
 
 .banner h1 {
     font-family: 'SundayRegular';
@@ -114,6 +118,10 @@ body {
     font-family: 'SundayRegular';
     color: white;
     border: none;
+}
+
+.link {
+    color: black;
 }
 
 @media only screen and (max-width: 1024px)  {
