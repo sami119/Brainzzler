@@ -4,32 +4,48 @@
     Layout = "_Layout";
     ViewData["Title"] = "Тестове";
 }
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-               Тестове
-            </th>
-            <th></th>
+            <td>
+                <h4><b>Тестове</b></h4>
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                @if (Context.User.Identity.Name == "Sami119")
+                {
+                    <a class="StartGame" asp-action="Create">Създай</a>
+                }
+            </td>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Test_Name)
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.Id">Започни теста</a>
-            </td>
-            <td>
-                <a asp-action="Create" asp-route-id="@item.Id">create</a>
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">edit</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Test_Name)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Започни теста</a>
+                </td>
+                <td>
+                    @if (Context.User.Identity.Name == "Sami119")
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Промени</a>
+                    }
+                </td>
+                <td>
+                    @if (Context.User.Identity.Name == "Sami119")
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
